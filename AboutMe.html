@@ -3,7 +3,7 @@
 <body class="pagePadding" style="background-color:#EEEEE3;">
 <head>
 <style>
-.headDiv{
+div.headDiv{
         border: 5px solid white;
         border-radius: 13px;
         background-color: #CCD5AE;
@@ -11,7 +11,7 @@
         color: #595e4a;
         position: -webkit-sticky;
 }
-.pagePadding{
+body.pagePadding{
     padding: 20px;
 }
 ul{
@@ -25,23 +25,35 @@ li{
 }
 li a{
     display:block;
-    padding: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
     color: #595e4a;
-    border-right: 2px solid white
+    border-right: 2px solid white;
+    font-size: 20px;
 }
 .line-1 {
-  height: 3px;
+  height: 4px;
   background: white
 }
 
 .headerText{
     padding-left: 15px;
-    font-size: 25px
+    font-size: 35px
 }
-.icons{
-    padding: 7px;
-    width:40px;
-    
+p.aboutMeBlurb{
+   
+    padding: 20px;
+    font-size: 25px;
+    background-color: white;
+    border: 4px solid #CCD5AE;
+    border-radius: 13px;
+}
+div.aboutMePadding{
+    padding-left: 40%;
+    padding-right: 0.5%;
+    padding-top: 60px;
 }
 </style>
 </head>
@@ -50,20 +62,18 @@ li a{
     <h1 class="headerText">Isabella Kenton - About Me</h1>
     <div class="line-1"></div>
     <ul>
-        <li><a href="AboutMe.html">About Me</a></li>
-        <li><a href="">Projects</a></li>
+        <li><a href="">About Me</a></li>
+        <li><a href="CodingProjects.html">Projects</a></li>
         <li><a href="">Game Dev</a></li>
         <li><a href="">UI/UX Portfolio</a></li>
-      </ul>
+    </ul>
 </div>
-<table style="">
-    <tr>
-        <img src="images/github_PNG47.png" alt="GitHub" class="icons">
-        <img src="images/linkedin-icon.png" alt="LinkedIn" class="icons">
-        <img src="images/itch_io_logo.png" alt="itch.io" class="icons">
-    </tr>
-</table>
+<div class="aboutMePadding">
+    <p class="aboutMeBlurb">
+        Hello! I am Isabella, a current 4th year student at Cal Poly Pomona. I am a  Computer Science major focusing on UI/UX and Game Development.<br><br>
+        In my spare time I love playing table top games such as Dungeons and Dragons and Vampire the Masquerade, and drawing.
+    </p>
+</div>
+
 </body>
-
-
 </html>
