@@ -1,0 +1,83 @@
+.headDiv{
+    border: 10px solid white;
+    border-radius: 13px;
+    background-color: #CCD5AE;
+    text-align: left;
+    color: #595e4a;
+    position: -webkit-sticky;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+body.pagePadding{
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+}
+ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+li{
+float: left;
+}
+li a{
+display:block;
+padding-top: 15px;
+padding-bottom: 15px;
+padding-left: 20px;
+padding-right:20px;
+color: #595e4a;
+font-size: 30px;
+}
+
+
+.headerText{
+padding-left: 20px;
+font-size: 45px
+}
+p.aboutMeBlurb{
+
+padding: 20px;
+font-size: 30px;
+background-color: white;
+border: 8px solid #CCD5AE;
+border-radius: 13px;
+}
+div.aboutMePadding{
+padding-left: 35%;
+padding-right: 0.5%;
+padding-top: 60px;
+}
+div.spacing{
+    padding-top: 50px;
+}
+h1.socials{
+    border: 8px solid white;
+    border-radius: 13px;
+    background-color: #CCD5AE;
+    text-align: left;
+    color: #4e5241;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    font-size: 45px;
+}
+p {
+    color: #4e5241;
+}
+.container {
+    display: flex;
+    align-items: center;
+    
+}
+.iconsPadding{
+    padding-left: 50px;
+    padding-right: 30px;
+    height: 110px;
+}
