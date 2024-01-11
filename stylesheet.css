@@ -1,5 +1,5 @@
 .headDiv{
-    border: 10px solid white;
+    border: 7px solid white;
     border-radius: 13px;
     background-color: #CCD5AE;
     text-align: left;
@@ -16,47 +16,49 @@ body.pagePadding{
     padding-bottom: 20px;
 }
 ul{
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 li{
-float: left;
+    float: left;
 }
 li a{
-display:block;
-padding-top: 15px;
-padding-bottom: 15px;
-padding-left: 20px;
-padding-right:20px;
-color: #595e4a;
-font-size: 30px;
+    display:block;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right:20px;
+    color: #595e4a;
+    font-size: 30px;
 }
 
 
 .headerText{
-padding-left: 20px;
-font-size: 45px
+    padding-left: 20px;
+    font-size: 40px;
 }
 p.aboutMeBlurb{
 
-padding: 20px;
-font-size: 30px;
-background-color: white;
-border: 8px solid #CCD5AE;
-border-radius: 13px;
+    padding: 20px;
+    font-size: 30px;
+    background-color: white;
+    border: 7px solid #CCD5AE;
+    border-radius: 13px;
 }
 div.aboutMePadding{
-padding-left: 35%;
-padding-right: 0.5%;
-padding-top: 60px;
+    padding-right: 0.5%;
+    padding-top: 40px;
 }
 div.spacing{
-    padding-top: 50px;
+    padding-top: 30px;
 }
-h1.socials{
-    border: 8px solid white;
+a{
+    color:#595e4a;
+}
+.socials{
+    border: 7px solid white;
     border-radius: 13px;
     background-color: #CCD5AE;
     text-align: left;
@@ -66,7 +68,7 @@ h1.socials{
     padding-top: 15px;
     padding-bottom: 15px;
     
-    font-size: 45px;
+    
 }
 p {
     color: #4e5241;
@@ -77,7 +79,20 @@ p {
     
 }
 .iconsPadding{
-    padding-left: 50px;
-    padding-right: 30px;
-    height: 110px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+}
+
+.line-1{
+    height: 3px;
+    background: pink;
+}
+table{
+    border-collapse: collapse;
+}
+
+.tableRow{
+    border-top: 3px solid white;
+    
 }
