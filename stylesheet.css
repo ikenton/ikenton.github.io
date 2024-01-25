@@ -4,15 +4,15 @@
     background-color: #CCD5AE;
     text-align: left;
     color: #595e4a;
-    position: -webkit-sticky;
-    width: 100%;
+    
+    width: 99%;
     display: flex;
     align-items: center;
 }
 body.pagePadding{
     padding-top: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
     padding-bottom: 20px;
 }
 ul{
@@ -31,7 +31,7 @@ li a{
     padding-left: 20px;
     padding-right:20px;
     color: #595e4a;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 
@@ -39,36 +39,24 @@ li a{
     padding-left: 20px;
     font-size: 40px;
 }
-p.aboutMeBlurb{
-
-    padding: 20px;
-    font-size: 30px;
-    background-color: white;
-    border: 7px solid #CCD5AE;
-    border-radius: 13px;
-}
 div.aboutMePadding{
     padding-right: 0.5%;
-    padding-top: 40px;
+    padding-top: 20px;
+    width: 100%;
 }
 div.spacing{
-    padding-top: 30px;
+    padding-top: 40px;
 }
 a{
     color:#595e4a;
 }
-.socials{
+.aboutMe{
+    border-collapse: collapse;
     border: 7px solid white;
     border-radius: 13px;
     background-color: #CCD5AE;
     text-align: left;
     color: #4e5241;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    
-    
 }
 p {
     color: #4e5241;
@@ -88,11 +76,15 @@ p {
     height: 3px;
     background: pink;
 }
-table{
+.tableBorder{
     border-collapse: collapse;
 }
 
 .tableRow{
     border-top: 3px solid white;
     
+}
+.tableHeader{
+    background-color: white;
+    border: 5px solid #CCD5AE;
 }
