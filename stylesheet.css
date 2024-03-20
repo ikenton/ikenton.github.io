@@ -1,9 +1,9 @@
 .headDiv{
-    border: 7px solid white;
+    border: 7px solid ;
     border-radius: 13px;
-    background-color: #CCD5AE;
+    background-color: #B97375;
     text-align: left;
-    color: #595e4a;
+    color: #E2DCDE;
     
     width: 99%;
     display: flex;
@@ -30,7 +30,7 @@ li a{
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right:20px;
-    color: #595e4a;
+    color: #E2DCDE;
     font-size: 25px;
 }
 
@@ -39,27 +39,14 @@ li a{
     padding-left: 20px;
     font-size: 40px;
 }
-div.aboutMePadding{
-    padding-right: 0.5%;
-    padding-top: 20px;
-    width: 100%;
-}
 div.spacing{
     padding-top: 40px;
 }
 a{
-    color:#595e4a;
-}
-.aboutMe{
-    border-collapse: collapse;
-    border: 7px solid white;
-    border-radius: 13px;
-    background-color: #CCD5AE;
-    text-align: left;
-    color: #4e5241;
+    color:#E2DCDE;
 }
 p {
-    color: #4e5241;
+    color: #E2DCDE;
 }
 .container {
     display: flex;
@@ -71,20 +58,43 @@ p {
     padding-right: 20px;
     height: 50px;
 }
-
-.line-1{
-    height: 3px;
-    background: pink;
-}
 .tableBorder{
     border-collapse: collapse;
 }
-
-.tableRow{
-    border-top: 3px solid white;
+.aboutMeDiv{
+    color:#E2DCDE; 
+    border:7px solid #E2DCDE; 
+    border-radius: 13px; 
+    background-color: #B97375;
+    width: 90%;
+}
+.aboutMeTableHeader{
+    background-color: #B97375;
+    padding-left: 30px; 
+    width:100%; 
+    text-align:left;
+    border-bottom: 5px solid #E2DCDE;
+}
+.aboutMeParagraph{
+    padding-top: 20px; 
+    padding-left: 30px;
+    padding-bottom:20px;
+    padding-right: 30px; 
+    font-size: 22px;
+    background-color: #B97375;
+    text-align: left;
+}
+.expDiv{
+    color:#E2DCDE; 
+    border:7px solid #E2DCDE; 
+    border-radius: 13px; 
+    background-color: #B97375;
     
 }
-.tableHeader{
-    background-color: white;
-    border: 5px solid #CCD5AE;
+.expHeader{
+    background-color: #B97375;
+    padding-left: 30px; 
+    width:100%; 
+    text-align:left;
+    border-bottom: 5px solid #E2DCDE;
 }
