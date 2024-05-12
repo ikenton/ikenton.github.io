@@ -88,3 +88,16 @@ p {
     background-color: white;
     border: 5px solid #CCD5AE;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #ffff;
+    padding: 10px;
+}
+
+.grid-item{
+    background-color: #ffff;
+    border: 1px solid rgba(255, 255, 255, 0);
+    text-align:center;
+}
