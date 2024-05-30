@@ -64,7 +64,8 @@ p {
 .container {
     display: flex;
     align-items: center;
-    
+    flex-direction: row;
+    gap: 20px;
 }
 .iconsPadding{
     padding-left: 20px;
@@ -88,4 +89,14 @@ p {
     background-color: white;
     border: 5px solid #CCD5AE;
 }
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: flex-start; /* Align items to the start (left) */
+        gap: 10px; /* Adjust space between image and text */
+    }
 
+    .image {
+        width: 100%; /* Image takes full width in smaller screens */
+    }
+}
