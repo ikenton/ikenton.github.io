@@ -132,3 +132,9 @@ p{
     color: #032826;
     font-size: 22px;
 }
+.box{
+    color:#032826; 
+    border:7px solid#032826; 
+    border-radius: 13px; 
+    background-color: #A8C1AB;
+}
