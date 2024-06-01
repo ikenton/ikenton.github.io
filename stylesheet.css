@@ -116,7 +116,13 @@ p {
 }
 
 .grid-item{
-    background-color:  A8C1AB;
+    background-color:  #A8C1AB;
     border: 1px solid rgba(255, 255, 255, 0);
     text-align:center;
+    padding-bottom: 5px;
+}
+.grid-container-2 {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    padding: 10px;
 }
