@@ -1,9 +1,9 @@
 .headDiv{
-    border: 7px solid white;
+    border: 7px solid #032826;
     border-radius: 13px;
-    background-color: #CCD5AE;
+    background-color: #A8C1AB;
     text-align: left;
-    color: #595e4a;
+    color: #032826;
     
     width: 99%;
     display: flex;
@@ -11,9 +11,10 @@
 }
 body.pagePadding{
     padding-top: 20px;
-    padding-left: 1.5%;
-    padding-right: 1.5%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-bottom: 20px;
+    background-color:#2F4B4A;
 }
 ul{
     list-style-type: none;
@@ -30,7 +31,7 @@ li a{
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right:20px;
-    color: #595e4a;
+    color: #032826;
     font-size: 25px;
 }
 
@@ -48,15 +49,15 @@ div.spacing{
     padding-top: 40px;
 }
 a{
-    color:#595e4a;
+    color: #032826;
 }
 .aboutMe{
     border-collapse: collapse;
-    border: 7px solid white;
+    border: 7px solid  #032826;
     border-radius: 13px;
     background-color: #CCD5AE;
     text-align: left;
-    color: #4e5241;
+    color: #032826;
 }
 p {
     color: #4e5241;
@@ -65,7 +66,7 @@ p {
     display: flex;
     align-items: center;
     flex-direction: row;
-    gap: 20px;
+    gap: 40px;
 }
 .iconsPadding{
     padding-left: 20px;
@@ -73,10 +74,6 @@ p {
     height: 50px;
 }
 
-.line-1{
-    height: 3px;
-    background: pink;
-}
 .tableBorder{
     border-collapse: collapse;
 }
@@ -87,7 +84,7 @@ p {
 }
 .tableHeader{
     background-color: white;
-    border: 5px solid #CCD5AE;
+    border: 5px solid  #032826;
 }
 @media (max-width: 600px) {
     .container {
@@ -99,4 +96,27 @@ p {
     .image {
         width: 100%; /* Image takes full width in smaller screens */
     }
+    ul {
+        justify-content: space-around; /* Adjust spacing on smaller screens */
+    }
+    ul li {
+        margin: 0 3px; /* Further reduced margin on smaller screens */
+    }
+    ul li a {
+        font-size: 0.8em; /* Adjust font size on smaller screens */
+    }
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #A8C1AB;
+    padding: 10px;
+    border-radius: 13px;
+    border:7px solid  #032826;
+}
+
+.grid-item{
+    background-color:  A8C1AB;
+    border: 1px solid rgba(255, 255, 255, 0);
+    text-align:center;
 }
