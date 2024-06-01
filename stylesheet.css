@@ -126,3 +126,8 @@ p {
     grid-template-columns: auto auto auto auto auto;
     padding: 10px;
 }
+
+p{
+    color: #032826;
+    font-size: 22px;
+}
