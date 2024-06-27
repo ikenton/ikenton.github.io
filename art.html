@@ -10,6 +10,18 @@
         
     </style>
 </head>
+<script>
+  function togglePopup(){
+    document.getElementById("popup-1").classList.toggle("active");
+  }
+
+  function chooseImage(imgElement){
+    const src = imgElement.getAttribute('data-src');
+    const popupImage = document.getElementById('popup-image');
+    popupImage.setAttribute('src', src)
+    togglePopup();
+  }
+</script>
 <div class="headDiv">
     <table style="width:100%; border-collapse: collapse;">
         <tr >
@@ -49,80 +61,94 @@
     </table>
 </div>
 <div class="spacing"></div>
+<div class="popup" id="popup-1">
+    <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="togglePopup()">
+                &times;
+            </div>
+            <div class="popup-grid">
+                <img src="images/icons/left_arrow.png" style="padding-right: 15px; position:relative;top:250px;left:30px;">
+            
+                <img id="popup-image" src="images/art/pt-cage-tent.png" alt="Popup Image"  style="max-height: 500px; position:relative;left:30px;" >
+                <img src="images/icons/right_arrow.png" style="padding-left: 15px; position:relative;top:250px;">
 
+            </div>
+        </div>
+</div>
 <div>
     <div class="grid-container" style="background-color:  #032826;">
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/pt-cage-tent.png" alt="Cage Tent" style="width: 100%;">
+            <img src="images/art/pt-cage-tent.png" data-src="images/art/pt-cage-tent.png" alt="Cage Tent" style="width: 100%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/pt-courtyard.png" alt="Popcorn Teeth courtyard" style="width: 100%;">
+            <img src="images/art/pt-courtyard.png" data-src="images/art/pt-courtyard.png" alt="Popcorn Teeth courtyard" style="width: 100%;cursor:pointer" onclick="chooseImage(this)">
 
         </div>
         <div class="grid-item"style="background-color:  #032826;"> 
-            <img src="images/art/pt-hugo-trailer.png" alt="Hugo's trailer" style="width: 100%;">
+            <img src="images/art/pt-hugo-trailer.png" data-src="images/art/pt-hugo-trailer.png" alt="Hugo's trailer" style="width: 100%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item"style="background-color:  #032826;"> 
-            <img src="images/art/pt-marlon-trailer.png" alt="Marlon's Trailer" style="width: 100%;">
+            <img src="images/art/pt-marlon-trailer.png" data-src="images/art/pt-marlon-trailer.png" alt="Marlon's Trailer" style="width: 100%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item"style="background-color:  #032826;"> 
-            <img src="images/art/ringmaster-trailer.png" alt="Ringmaster's Trailer" style="width: 100%;">
+            <img src="images/art/ringmaster-trailer.png" data-src="images/art/ringmaster-trailer.png" alt="Ringmaster's Trailer" style="width: 100%;cursor:pointer" onclick="chooseImage(this)">
             
         </div>
         <div class="grid-item"style="background-color:  #032826;"> 
-            <img src="images/art/pt-bonnie trailer.png" alt="Bonnie's Trailer" style="width: 100%;">
+            <img src="images/art/pt-bonnie trailer.png" data-src="images/art/pt-bonnie trailer.png" alt="Bonnie's Trailer" style="width: 100%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item"style="background-color:  #032826;"> 
-            <img src="images/art/pita underneath.png" alt="Pita hiding CG" style="width: 100%;">
-
-        </div>
-        <div class="grid-item"style="background-color:  #032826;"> 
-            <img src="images/art/NLU-Background-1.png" alt="No Leg Up background art" style="width: 80%;">
-        </div>
-        <div class="grid-item"style="background-color:  #032826;"> 
-            <img src="images/art/GillianTidestrider.png" alt="Gillian Tidestrider" style="width: 70%;">
+            <img src="images/art/pita underneath.png" data-src="images/art/pita underneath.png" alt="Pita hiding CG" style="width: 100%;cursor:pointer" onclick="chooseImage(this)">
 
         </div>
         <div class="grid-item"style="background-color:  #032826;"> 
-            <img src="images/art/fae.png" alt="Fae" style="width: 80%;">
+            <img src="images/art/NLU-Background-1.png" data-src="images/art/NLU-Background-1.png" alt="No Leg Up background art" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
+        </div>
+        <div class="grid-item"style="background-color:  #032826;"> 
+            <img src="images/art/GillianTidestrider.png" data-src="images/art/GillianTidestrider.png" alt="Gillian Tidestrider" style="width: 70%;cursor:pointer" onclick="chooseImage(this)">
+
+        </div>
+        <div class="grid-item"style="background-color:  #032826;"> 
+            <img src="images/art/fae.png" data-src="images/art/fae.png" alt="Fae" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
 
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/maya.png" alt="Maya" style="width: 80%;">
+            <img src="images/art/maya.png" data-src="images/art/maya.png" alt="Maya" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
 
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/ed2.png" alt="Eddie Alvarado 2" style="width: 80%;">
+            <img src="images/art/ed2.png" data-src="images/art/ed2.png" alt="Eddie Alvarado 2" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
 
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/july.png" alt="July" style="width: 80%;">
+            <img src="images/art/july.png" data-src="images/art/july.png" alt="July" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
 
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/charlie.png" alt="Charlie Ledger" style="width: 80%;">
+            <img src="images/art/charlie.png" data-src="images/art/charlie.png" alt="Charlie Ledger" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
 
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/nick.png" alt="Nick" style="width: 80%;">
+            <img src="images/art/nick.png" data-src="images/art/nick.png" alt="Nick" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/ruth.png" alt="Ruth" style="width: 80%;">
+            <img src="images/art/ruth.png" data-src="images/art/ruth.png" alt="Ruth" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/ed1.png" alt="Eddie Alvarado 1" style="width: 80%;">
+            <img src="images/art/ed1.png" data-src="images/art/ed1.png" alt="Eddie Alvarado 1" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/ivy.png" alt="Ivy" style="width: 80%;">
+            <img src="images/art/ivy.png" data-src="images/art/ivy.png" alt="Ivy" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/r.png" alt="Ronaldo" style="width: 80%;">
+            <img src="images/art/r.png" data-src="images/art/r.png" alt="Ronaldo" style="width: 80%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/BreeAndSelFin.png" alt="Breen and Sel" style="width: 100%;">
+            <img src="images/art/BreeAndSelFin.png" data-src="images/art/BreeAndSelFin.png" alt="Breen and Sel" style="width: 100%;cursor:pointer" onclick="chooseImage(this)">
         </div>
         <div class="grid-item" style="background-color:  #032826;"> 
-            <img src="images/art/pfpFinal.png" alt="Self portrait" style="width: 95%;">
+            <img src="images/art/pfpFinal.png" data-src="images/art/pfpFinal.png" alt="Self portrait" style="width: 95%;cursor:pointer" onclick="chooseImage(this)">
         </div>
     </div>
 </div>
