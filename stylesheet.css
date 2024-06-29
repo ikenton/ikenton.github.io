@@ -127,7 +127,29 @@ p {
     grid-template-columns: auto auto auto auto auto auto auto;
     padding: 10px;
 }
+@media (max-width: 1200px) {
+    .grid-container-2 {
+        grid-template-columns: repeat(5, 1fr); /* 5 columns for large screens */
+    }
+}
 
+@media (max-width: 900px) {
+    .grid-container-2 {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-container-2 {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .grid-container-2 {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+}
 p{
     color: #032826;
     font-size: 22px;
@@ -198,3 +220,4 @@ p{
     grid-template-columns: auto auto auto;
     
 }
+
