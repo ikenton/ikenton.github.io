@@ -131,17 +131,26 @@ p {
     .grid-container-2 {
         grid-template-columns: repeat(5, 1fr); /* 5 columns for large screens */
     }
+    .grid-container{
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+       
+    }
 }
 
 @media (max-width: 900px) {
     .grid-container-2 {
         grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
     }
+    
 }
 
 @media (max-width: 600px) {
     .grid-container-2 {
         grid-template-columns: repeat(2, 1fr); /* 2 columns for small screens */
+    }
+    .grid-container{
+        grid-template-columns: repeat(1, 1fr); /* 2 columns for small screens */
+       
     }
 }
 
