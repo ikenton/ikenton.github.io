@@ -59,6 +59,35 @@
         }
         </style>
 </head>
+<script>
+    let currentIndex = 0;
+    const todoImages = ["images/UI UX/Login Page.png", "images/UI UX/Register.png","images/UI UX/Main Page.png","images/UI UX/New List.png","images/UI UX/Grocery List.png" ];
+    
+    function lastImage(index){
+        currentIndex = (currentIndex - 1 + 5) % 5;
+        updatePopupImage();
+    }
+    function nextImage(index){
+        currentIndex = (currentIndex + 1) % 5;
+        updatePopupImage();
+    }
+
+    function updatePopupImage(){
+        const popupImage1 = document.getElementById('todoImage-1');
+        const popupImage2 = document.getElementById('todoImage-2');
+        const popupImage3 = document.getElementById('todoImage-3');
+    
+        // Update the src attribute with the new image source
+        popupImage1.setAttribute('src', todoImages[currentIndex]);
+        let index2 = (currentIndex + 1)%5;
+        popupImage2.setAttribute('src', todoImages[index2]);
+        let index3 = (currentIndex + 2)%5;
+        popupImage3.setAttribute('src', todoImages[index3]);
+
+
+
+  }
+  </script>
 <div class="headDiv">
     <table style="width:100%; border-collapse: collapse;">
         <tr >
@@ -98,7 +127,34 @@
     </table>
 </div>
 <div class="spacing"></div>
+<div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB;">
+    <table style="border-collapse: collapse; width: 100%;">
+        <tr>
+            <th style="padding-left: 30px; padding-bottom: 0px;  text-align:left;border-bottom: 5px solid #032826;">
+                <h1>To Do App</h1>
+            </th>
+        </tr>
+        <tr>
+            <td style="padding-top: 20px; padding-left: 30px;padding-bottom:20px;padding-right: 30px; font-size: 20px;">
+                <p>The To Do App is a way for users to create custom lists and notes.</p>
+                <div class="ui-grid">
+                    <img src="images/icons/left_arrow.png" onclick="lastImage()" style="padding-right: 15px; position:relative;top:250px;left:30px;cursor:pointer;">
+                    <img src="images/UI UX/Login Page.png" id="todoImage-1" data-index="0" alt="To Do Login" style="padding:10px;width:250px;"/>
+        
+                    <img src="images/UI UX/Register.png" id="todoImage-2" data-index="1" alt="To Do Register" style="padding:10px;width: 250px;"/>
+                    <img src="images/UI UX/Main Page.png" id="todoImage-3" data-index="2" alt="To Do Main Page" style="padding:10px;width: 250px;"/>
+                
+                    <img src="images/icons/right_arrow.png" onclick="nextImage()" style="padding-left: 15px; position:relative;top:250px;cursor: pointer;">
 
+                </div>
+                
+            </td>
+            
+        </tr>
+    
+    </table>
+</div>
+<div class="spacing"></div>
 <div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB;">
     <table style="border-collapse: collapse; width: 100%;">
         <tr>
@@ -118,6 +174,7 @@
     </table>
 </div>
 <div class="spacing"></div>
+
 <div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB;">
     <table style="border-collapse: collapse; width: 100%;">
         <tr>
