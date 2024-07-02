@@ -60,32 +60,50 @@
         </style>
 </head>
 <script>
-    let currentIndex = 0;
+    let currentIndexTodo = 0;
     const todoImages = ["images/UI UX/Login Page.png", "images/UI UX/Register.png","images/UI UX/Main Page.png","images/UI UX/New List.png","images/UI UX/Grocery List.png" ];
-    
-    function lastImage(index){
-        currentIndex = (currentIndex - 1 + 5) % 5;
-        updatePopupImage();
+            
+    function lastTodo(index){
+        currentIndexTodo = (currentIndexTodo - 1 + 5) % 5;
+        updateTodoImage();
     }
-    function nextImage(index){
-        currentIndex = (currentIndex + 1) % 5;
-        updatePopupImage();
+    function nextTodo(index){
+        currentIndexTodo = (currentIndexTodo + 1) % 5;
+        updateTodoImage();
     }
 
-    function updatePopupImage(){
-        const popupImage1 = document.getElementById('todoImage-1');
-        const popupImage2 = document.getElementById('todoImage-2');
-        const popupImage3 = document.getElementById('todoImage-3');
+    function updateTodoImage(){
+        const todoImage1 = document.getElementById('todoImage-1');
+        const todoImage2 = document.getElementById('todoImage-2');
+        const todoImage3 = document.getElementById('todoImage-3');
     
         // Update the src attribute with the new image source
-        popupImage1.setAttribute('src', todoImages[currentIndex]);
+        todoImage1.setAttribute('src', todoImages[currentIndex]);
         let index2 = (currentIndex + 1)%5;
-        popupImage2.setAttribute('src', todoImages[index2]);
+        todoImage2.setAttribute('src', todoImages[index2]);
         let index3 = (currentIndex + 2)%5;
-        popupImage3.setAttribute('src', todoImages[index3]);
+        todoImage3.setAttribute('src', todoImages[index3]);
+    }
 
+    const flowershopImages = ["images/UI UX/Home.png","images/UI UX/Menubar.png" ,"images/UI UX/Product List.png", "images/UI UX/Scroll.png"]
+    let currentIndexFlower = 0;
+    function lastFlowershopImage(index){
+        currentIndexFlower = (currentIndexFlower - 1 + 4) % 4;
+        updateFlowershopImage();
+    }
+    function nextFlowershopImage(index){
+        currentIndexFlower = (currentIndexFlower + 1) % 4;
+        updateFlowershopImage();
+    }
 
-
+    function updateFlowershopImage(){
+        const flowerImage1 = document.getElementById('flowershop-1');
+        const flowerImage2 = document.getElementById('flowershop-2');
+    
+        // Update the src attribute with the new image source
+        flowerImage1.setAttribute('src', flowershopImages[currentIndexFlower]);
+        let index2 = (currentIndexFlower + 1)%4;
+        flowerImage2.setAttribute('src', flowershopImages[index2]);
   }
   </script>
 <div class="headDiv">
@@ -138,13 +156,13 @@
             <td style="padding-top: 20px; padding-left: 30px;padding-bottom:20px;padding-right: 30px; font-size: 20px;">
                 <p>The To Do App is a way for users to create custom lists and notes.</p>
                 <div class="ui-grid">
-                    <img src="images/icons/left_arrow.png" onclick="lastImage()" style="padding-right: 15px; position:relative;top:250px;left:30px;cursor:pointer;">
+                    <img src="images/icons/left_arrow.png" onclick="lastTodo()" style="position: relative; top:180px; padding-right: 15px; cursor:pointer;width:40px;">
                     <img src="images/UI UX/Login Page.png" id="todoImage-1" data-index="0" alt="To Do Login" style="padding:10px;width:250px;"/>
         
                     <img src="images/UI UX/Register.png" id="todoImage-2" data-index="1" alt="To Do Register" style="padding:10px;width: 250px;"/>
                     <img src="images/UI UX/Main Page.png" id="todoImage-3" data-index="2" alt="To Do Main Page" style="padding:10px;width: 250px;"/>
                 
-                    <img src="images/icons/right_arrow.png" onclick="nextImage()" style="padding-left: 15px; position:relative;top:250px;cursor: pointer;">
+                    <img src="images/icons/right_arrow.png" onclick="nextTodo()" style="position: relative; top:180px;cursor: pointer;width:40px;">
 
                 </div>
                 
@@ -165,10 +183,15 @@
         <tr>
             <td style="padding-top: 20px; padding-left: 30px;padding-bottom:20px;padding-right: 30px; font-size: 20px;">
                 <p>Dani's Flower shop is a fictional website created as an exercise to develop my UI/UX skills. <br></p>
-                <img src="images/UI UX/Home.png" alt="Dani's HomePage" style="padding:10px;width:45%;" />
-                <img src="images/UI UX/Menubar.png" alt="Menu Bar" style="padding:10px;width:45%;"/>
-                <img src="images/UI UX/Product List.png" alt="highlight" style="padding:10px;width: 45%;"/>
-                <img src="images/UI UX/Scroll.png" alt="Scroll" style="padding:10px;width:45%;" />
+                <div class="ui-grid" style="padding: 10px;width:100%">
+                    <img src="images/icons/left_arrow.png" onclick="lastFlowershopImage()" style="position: relative; top:120px;padding-right: 15px; cursor:pointer;width:40px;">
+                    <img src="images/UI UX/Home.png" id="flowershop-1" data-index="0" alt="Dani's HomePage" style="padding:10px;width:95%;" />
+                    <img src="images/UI UX/Menubar.png" id="flowershop-2" data-index="1" alt="Menu Bar" style="padding:10px;width:95%;"/>
+                
+                    <img src="images/icons/right_arrow.png" onclick="nextFlowershopImage()" style="padding-right:20px;position: relative; top:120px; cursor: pointer;width:40px;">
+
+                </div>
+                
             </td>
         </tr>
     </table>
