@@ -71,24 +71,27 @@
         
     }
     .leftmargin {
-        display: inline-block;
+        display: block;
         width: 20%;
         min-width: 100px;
         height: 100%;
         border-right: 2px solid #ff69b4;
+       
     }
     .folderlinks {
-        display: block;
         font-size: 17px;
-        padding: 10px;
         text-decoration: none;
         color: rebeccapurple;
         font-family: Arial, sans-serif;
     }
     .folder_icons {
         width: 25px;
-        padding-left: 10px;
-        display: block;
+        padding-right:3px;
+        
+    }
+    .folder_div {
+        display: inline-block;
+        width: 90%;
         padding: 10px;
     }
     </style>
@@ -106,23 +109,37 @@
         <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ AboutMe \</div>
         <div class="content">
             <!--theres gonna be a div id=left menu. insidwe it is going to be a,a,a,... with style margin left then the main aocntent on teh right will have a width-->
-            
-            <span style="display:inline-block;">
-                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
-                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
-                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
-                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
-                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
-                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
-
-            </span>
+                        
             <span class="leftmargin">
-                <a class="folderlinks" href="index copy.html">About Me</a>
-                <a class="folderlinks" href="Resume.html">Resume</a>
-                <a class="folderlinks" href="CodingProjects.html">Coding Projects</a>
-                <a class="folderlinks" href="https://flumphik.itch.io/">Game Development</a>
-                <a class="folderlinks" href="ui-ux-port.html">UI/UX Portfolio</a>
-                <a class="folderlinks" href="art.html">Art</a>
+                <div class="folder_div" style="background-color: #fcd9de; border: 2px solid #ff1493; ">
+                    <img class="folder_icons" src="images\icons\retro_folders.png" />
+                    <a class="folderlinks" href="index copy.html">About Me</a>
+                </div>
+                <div class="folder_div">
+                    <img class="folder_icons" src="images\icons\retro_folders.png" />
+                    <a class="folderlinks" href="Resume.html">Resume</a>
+                </div>
+                <div class="folder_div" ">
+                    <img class="folder_icons" src="images\icons\retro_folders.png" />
+                    <a class="folderlinks" href="CodingProjects.html">Coding Projects</a>
+                </div>
+                <div class="folder_div">
+                    <img class="folder_icons" src="images\icons\retro_folders.png" />
+                    <a class="folderlinks" href="CodingProjects.html">Coding Projects</a>
+                </div>
+                <div class="folder_div">
+                    <img class="folder_icons" src="images\icons\retro_folders.png" />
+                    <a class="folderlinks" href="https://flumphik.itch.io/">Game Development</a>
+                </div>
+                <div class="folder_div">
+                    <img class="folder_icons" src="images\icons\retro_folders.png" />
+                    <a class="folderlinks" href="ui-ux-port.html">UI/UX Portfolio</a>
+                </div>
+                <div class="folder_div">
+                    <img class="folder_icons" src="images\icons\retro_folders.png" />
+                    <a class="folderlinks" href="art.html">Art</a>
+                </div>
+                
             </span>
         </div>
     </div>
