@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<body class="pagePadding" style="background-color: #e6d7ff;" >
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <meta name="author" content="Isabella Kenton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        background-color: #d7c7e7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 93vh;
+    }
+    .window {
+        width: 1100px;
+        height: 750px;
+        background: #ffb6c1;
+        border: 4px solid #ff69b4;
+        border-radius: 5px;
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .title-bar {
+        background: #ff69b4;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+    .buttons {
+        display: flex;
+        gap: 7px;
+    }
+    .button {
+        width: 12px;
+        height: 12px;
+        background: white;
+        border: 1px solid #ff1493;
+        border-radius: 50%;
+    }
+    .address-bar {
+        background: white;
+        margin: 6px;
+        padding: 3px;
+        border: 2px inset #ff69b4;
+        font-family: Arial, sans-serif;
+        letter-spacing: 1px;
+    }
+    .content {
+        flex-grow: 1;
+        background: white;
+        margin: 6px;
+        border: 2px inset #ff69b4;
+        overflow: auto;
+    }
+    .scrollbar {
+        width: 10px;
+        background: #ffb6c1;
+    }
+    .span {
+        font-size: 25px;
+        
+    }
+    .leftmargin {
+        display: inline-block;
+        width: 20%;
+        min-width: 100px;
+        height: 100%;
+        border-right: 2px solid #ff69b4;
+    }
+    .folderlinks {
+        display: block;
+        font-size: 17px;
+        padding: 10px;
+        text-decoration: none;
+        color: rebeccapurple;
+        font-family: Arial, sans-serif;
+    }
+    .folder_icons {
+        width: 25px;
+        padding-left: 10px;
+        display: block;
+        padding: 10px;
+    }
+    </style>
+</head>
+
+    <div class="window">
+        <div class="title-bar">
+            <span class="span">Isabella Kenton</span>
+            <div class="buttons">
+                <div class="button" style="background-color: greenyellow;"></div>
+                <div class="button" style="background-color: yellow;"></div>
+                <div class="button" style="background-color: red;"></div>
+            </div>
+        </div>
+        <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ AboutMe \</div>
+        <div class="content">
+            <!--theres gonna be a div id=left menu. insidwe it is going to be a,a,a,... with style margin left then the main aocntent on teh right will have a width-->
+            
+            <span style="display:inline-block;">
+                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
+                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
+                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
+                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
+                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
+                <img class="folder_icons" src="images\icons\retro_folders.jpg" />
+
+            </span>
+            <span class="leftmargin">
+                <a class="folderlinks" href="index copy.html">About Me</a>
+                <a class="folderlinks" href="Resume.html">Resume</a>
+                <a class="folderlinks" href="CodingProjects.html">Coding Projects</a>
+                <a class="folderlinks" href="https://flumphik.itch.io/">Game Development</a>
+                <a class="folderlinks" href="ui-ux-port.html">UI/UX Portfolio</a>
+                <a class="folderlinks" href="art.html">Art</a>
+            </span>
+        </div>
+    </div>
+
+</html>
