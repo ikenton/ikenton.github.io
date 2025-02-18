@@ -104,7 +104,8 @@
         /*gap: 10px;*/
         padding:10px;
         padding-left:20px;
-        padding-top:20px;
+        padding-top:10px;
+        padding-bottom: 10px;
     }
     .rightmargin {
         width:80%;
@@ -119,6 +120,10 @@
         font-family: Arial, sans-serif;
         color: rebeccapurple;
     }
+    h3 {
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+    }
     ul{
         font-family: Arial, sans-serif;
         color: rebeccapurple;
@@ -126,19 +131,50 @@
     p {
         font-family: Arial, sans-serif;
         color: rebeccapurple;
-        font-size:105%;
+        font-size:110%;
         line-height: 1.5;
     }
     .bulletpoints {
         list-style-type: circle;
         display:block;
     }
+
+    #currenttab{
+        background-color: #c8e1fc;
+        /*border: 2.5px solid #7a99e8;*/
+        /*maybe do a light blue for the highlight? or switch out these pinks for a light robin blue*/
+    }
+
+    #inactivetab{
+        background-color: white;
+        /*border:2.5px solid white;*/
+    }
     
     </style>
     <script>
-        function highlightFolder(x) {
-            if(x.id="current"){
-                //then change color and border to show the folder div is being highlighted. https://www.w3schools.com/Jsref/event_onmouseover.asp 
+        function highlightInactiveFolder(x) {
+            if(x.id="inactivetab"){
+                x.style.background = "#e8f2fe";
+                //x.style.border = "2.5px solid #e3f1ff";
+            } 
+        }
+        function highlightActiveFolder(x) {
+            if(x.id="currenttab"){
+                x.style.background = "#a8d2ff";
+                //x.style.border = "2.5px solid #6087eb";
+                
+            } 
+        }
+        function unhighlightInactiveFolder(x) {
+            if(x.id="inactivetab"){
+                x.style.background = "white";
+                //x.style.border = "2.5px solid white";
+            } 
+        }
+        function unhighlightActiveFolder(x) {
+            if(x.id="Activetab"){
+                x.style.background = "#d9eafc";
+                //x.style.border= "2.5px solid #7a99e8";
             } 
         }
     </script>
@@ -153,31 +189,31 @@
                 <div class="button" style="background-color: red;"></div>
             </div>
         </div>
-        <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ AboutMe \</div>
+        <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ AboutMe </div>
         <div class="content">
-            <div class="leftmargin">
-                <div class="folder_div"> <!--item-->
+            <div class="leftmargin"> <!--for mobile view I want the folders to either be at the top OR become a hamburger menu-->
+                <div class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)" onmouseout="unhighlightActiveFolder(this)"> <!--item-->
                     <img class="folder_icons" src="images\icons\retro_folders.png" />
                     <a class="folderlinks" href="index copy.html">About Me</a>
 
                 </div>
-                <div class="folder_div"> <!--item-->
+                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
                     <img class="folder_icons" src="images\icons\retro_folders.png" />
                     <a class="folderlinks" href="Resume.html">Resume</a>
                 </div>
-                <div class="folder_div" >
+                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
                     <img class="folder_icons" src="images\icons\retro_folders.png" />
                     <a class="folderlinks" href="CodingProjects.html">Coding Projects</a>
                 </div>
-                <div class="folder_div">
+                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
                     <img class="folder_icons" src="images\icons\retro_folders.png" />
                     <a class="folderlinks" href="https://flumphik.itch.io/">Game Development</a>
                 </div>
-                <div class="folder_div">
+                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
                     <img class="folder_icons" src="images\icons\retro_folders.png" />
                     <a class="folderlinks" href="ui-ux-port.html">UI/UX Portfolio</a>
                 </div>
-                <div class="folder_div">
+                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
                     <img class="folder_icons" src="images\icons\retro_folders.png" />
                     <a class="folderlinks" href="art.html">Art</a>
                 </div>
@@ -186,33 +222,25 @@
                 <h1>
                     Welcome!
                 </h1>
-                <p style="width:60%; ">
-                    My name is Iabella Kenton. I'm a recent graduate of Cal Poly Pomona where I earned my Bachelor's in Computer Science. I love to learn and grow my skills in Web Development, Game Design and Development, and IT. 
-                    <br><br>
-                    I am currently working towards earning my A+ Certification for technical support. 
+                <p style="width:60%; display: inline-block; ">
+                    My name is Isabella Kenton. I'm a recent graduate of Cal Poly Pomona where I earned my Bachelor's in Computer Science. I love to learn and grow my skills in Web Development, Game Design and Development, and IT. I am currently working towards earning my A+ Certification for technical support. 
                 </p>
-                <br>
-                <h2>Education</h2>
+                
+                <h2>Education</h2> <!--Figure out how to make the bullet points work!-->
+                <h3>
+                    Cal Poly Pomona | 2020 - 2024
+                </h3>
                 <p>
-                    Bachelor's in Computer Science at Cal Poly Pomona
-                    <br>
-                    &emsp;&ensp;> GPA:3.46
-                    <br>
-                    &emsp;&ensp;> Dean's List: 4 semesters
-                    <br>
-                    &emsp;&ensp;> CPP Game Development Club
-                    <br>
-                    &emsp;&emsp;&emsp;* Historian  (2021-2022)
-                    <br>
-                    &emsp;&emsp;&emsp;* Secretary  (2022-2023)
-                    
+                    Bachelor's in Computer Science <br>
+                    GPA: 3.46<br>
+                    Dean's List: 4 semesters    
                 </p>
                 <br>
                 
                 <div style="width: 90%; ">
                     <table style="border-collapse: collapse; width: 100%; background: #ffb6c1;">
                         <tr>
-                            <h1 style="   text-align:left;">Skills</h1>
+                            <h2 style="   text-align:left;">Skills</h2>
                         </tr>
                         <tr>
                             <div class="grid-container-2" >
