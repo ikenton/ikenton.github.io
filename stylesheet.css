@@ -124,7 +124,7 @@ p {
 }
 .grid-container-2 {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto auto auto ;
     padding: 10px;
 }
 @media (max-width: 1200px) {
