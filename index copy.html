@@ -140,7 +140,7 @@
     }
 
     #currenttab{
-        background-color: #c8e1fc;
+        background-color: #c3defa;
         /*border: 2.5px solid #7a99e8;*/
         /*maybe do a light blue for the highlight? or switch out these pinks for a light robin blue*/
     }
@@ -173,7 +173,7 @@
         }
         function unhighlightActiveFolder(x) {
             if(x.id="Activetab"){
-                x.style.background = "#d9eafc";
+                x.style.background = "#c3defa";
                 //x.style.border= "2.5px solid #7a99e8";
             } 
         }
@@ -192,31 +192,44 @@
         <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ AboutMe </div>
         <div class="content">
             <div class="leftmargin"> <!--for mobile view I want the folders to either be at the top OR become a hamburger menu-->
-                <div class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)" onmouseout="unhighlightActiveFolder(this)"> <!--item-->
-                    <img class="folder_icons" src="images\icons\retro_folders.png" />
-                    <a class="folderlinks" href="index copy.html">About Me</a>
+                <a class="folderlinks" href="index copy.html">
+                    <div class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)" onmouseout="unhighlightActiveFolder(this)"> <!--item-->
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">About Me</p>
 
-                </div>
-                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
-                    <img class="folder_icons" src="images\icons\retro_folders.png" />
-                    <a class="folderlinks" href="Resume.html">Resume</a>
-                </div>
-                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
-                    <img class="folder_icons" src="images\icons\retro_folders.png" />
-                    <a class="folderlinks" href="CodingProjects.html">Coding Projects</a>
-                </div>
-                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
-                    <img class="folder_icons" src="images\icons\retro_folders.png" />
-                    <a class="folderlinks" href="https://flumphik.itch.io/">Game Development</a>
-                </div>
-                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
-                    <img class="folder_icons" src="images\icons\retro_folders.png" />
-                    <a class="folderlinks" href="ui-ux-port.html">UI/UX Portfolio</a>
-                </div>
-                <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
-                    <img class="folder_icons" src="images\icons\retro_folders.png" />
-                    <a class="folderlinks" href="art.html">Art</a>
-                </div>
+                    </div> 
+                </a>
+                <a class="folderlinks" href="Resume copy.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Resume</p>
+                    </div> 
+                </a>
+                <a class="folderlinks" href="CodingProjects.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Coding Projects</p>
+                    </div> 
+                </a>
+                
+                <a class="folderlinks" href="https://flumphik.itch.io/">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Game Development</p>
+                    </div>
+                </a>
+                <a class="folderlinks" href="ui-ux-port.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">UI/UX Portfolio</p>
+                    </div>
+                </a>
+                <a class="folderlinks" href="art.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Art</p>
+                    </div> 
+                </a>
             </div>
             <div class="rightmargin">
                 <div >
