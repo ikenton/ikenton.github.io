@@ -134,9 +134,16 @@
         font-size:110%;
         line-height: 1.5;
     }
-    .bulletpoints {
+    ul.bulletpoints {
         list-style-type: circle;
-        display:block;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+        font-size:110%;
+        line-height: 1.5;
+    }
+    ul.bulletpoints li{
+        margin-left:40px;
     }
 
     #currenttab{
@@ -190,9 +197,10 @@
                 <div class="button" style="background-color: red;"></div>
             </div>
         </div>
+        <!--add a hamburger icon next to the address bar-->
         <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ Resume </div>
         <div class="content">
-            <div class="leftmargin"> <!--for mobile view I want the folders to either be at the top OR become a hamburger menu-->
+            <div class="leftmargin"> <!--for mobile view I want the folders to either be at the top OR become a hamburger menu. make the left margin adjustable-->
                 <a class="folderlinks" href="index copy.html">
                    <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
                         <img class="folder_icons" src="images\icons\retro_folders.png" />
@@ -239,20 +247,57 @@
                 <div>
                     <h1 style="margin:40px 70px; margin-bottom: 15px; border-bottom: 2px solid #ff69b4; padding-bottom:10px;">Isabella Kenton Resume</h1> <!--Insert dowload icon here-->
                     <p style="margin:10px 70px;text-align: justify;  text-justify: inter-word; ">Recent Computer Scientist Graduate with 5+ years of experience in software development, trouble-shooting, and analytical problem-solving. Contributes exceptional customer service, communication, multi-tasking, and leadership capabilities.</p>
-                    <h2 style="margin:20px 70px; margin-bottom: 0px; border-bottom: 2px solid #ff69b4; padding-bottom:10px;">Education</h2>
+                    
+<!--------------------------------------------------------------------------------------------------------------------------->
+                    
+                    <h2 style="margin:20px 70px; margin-top: 40px; margin-bottom: 0px; border-bottom: 2px solid #ff69b4; padding-bottom:10px;">Education</h2>
                 
                     <p style=" display: inline-block;margin: 0px 70px; padding-right: 30px;">
                         <b>Cal Poly Pomona | 2020 - 2024</b><br>
                         Bachelor's in Computer Science <br>
                         GPA: 3.46 
                     </p>
-                    <p style=" display: inline-block;margin:0x 70px;  ">
+                    <p style=" display: inline-block;margin:0x 70px; margin-bottom: 0px; ">
                         <b>Capo Valley High School | 2016 - 2020</b><br>
                         High School Diploma <br>
                         GPA: 3.8
                     </p>
-                    <h2 style="margin:10px 70px; margin-bottom: 0px; border-bottom: 2px solid #ff69b4; padding-bottom:10px;">Projects</h2>
-                    
+                    <a href="CodingProjects.html" style="text-decoration: none;"><h2 style="margin:10px 70px;margin-top:40px; margin-bottom: 15px; border-bottom: 2px solid #ff69b4; padding-bottom:10px;">Projects</h2> </a><!--Add a link to the projects page-->
+                    <p style="margin:0px 70px;text-align: justify;  text-justify: inter-word;"><b>Mental Health Mobile App</b></p>
+                    <p style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">Programmer | April 2023 - May 2023</p>
+                    <ul class="bulletpoints" style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">
+                        <li class="bulletpoints">Designed an Android app to monitor users’ mental well-being through daily check-ins, data analysis from health apps, and screen time tracking. Built using AWS Amplify, GraphQL, and Flutter. Was responsible for database creation, frontend-backend integration, and an API data collection feature.</li>
+                    </ul>
+                    <p style="margin:0px 70px; margin-top: 30px; text-align: justify;  text-justify: inter-word;"><b>Portfolio Website</b></p>
+                    <p style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">Programmer | May 2023 - Current</p>
+                    <ul class="bulletpoints" style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">
+                        <li class="bulletpoints">Designed and Developed a website with HTML5, JavaScript, and CSS. Showcasing various projects, and creating a centralized, accessible hub for potential employers and collaborators.</li>
+                    </ul>
+<!--------------------------------------------------------------------------------------------------------------------------->
+                    <h2 style="margin:20px 70px; margin-top:40px; margin-bottom: 0px; border-bottom: 2px solid #ff69b4; padding-bottom:10px;">Work Experience</h2>
+
+                    <p style="margin:0px 70px; margin-top: 30px; text-align: justify;  text-justify: inter-word;"><b>Target</b></p>
+                    <p style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">Service Advocate | September 2024 - Current</p>
+                    <ul class="bulletpoints" style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">
+                        <li class="bulletpoints">Effectively addressed customer concerns, providing solutions and support for product-related issues, ensuring prompt resolution. Managed and processed in-store pick-up orders efficiently, consistently delivering within the 3-minute service window.</li>
+                    </ul>
+
+                    <p style="margin:0px 70px; margin-top: 30px; text-align: justify;  text-justify: inter-word;"><b>Providence St Joseph</b></p>
+                    <p style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">Receptionist |  January 2022 - November 2022</p>
+                    <ul class="bulletpoints" style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">
+                        <li class="bulletpoints">Ensured accurate patient information, scheduled and billed LINQ 31-day reports, demonstrating attention to detail and supporting smooth cardiology department operations.</li>
+                    </ul>
+
+                    <p style="margin:0px 70px; margin-top: 30px; text-align: justify;  text-justify: inter-word;"><b>CPP Game Development Club</b></p>
+                    <p style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">Secretary | June 2022 - May 2023</p>
+                    <ul class="bulletpoints" style="margin:0px 70px;padding-bottom: 40px; text-align: justify;  text-justify: inter-word;">
+                        <li class="bulletpoints">Hosted semester-long projects where students could pitch their ideas for a game, form a team, and gain experience in game design and development. Scheduled and organized 50 club events, workshops, guest speakers, and three national game jams. </li>
+                    </ul>
+                    <p style="margin:0px 70px;text-align: justify;  text-justify: inter-word;">Historian |  June 2021 - May 2022</p>
+                    <ul class="bulletpoints" style="margin:0px 70px;text-align: justify; padding-bottom: 40px; text-justify: inter-word;">
+                        <li class="bulletpoints">Documented over 20 club projects and 60 club events. Kept records of membership information for over 50 members, activities, and attendance. Lead meetings and workshops on pixel art, music and Godot’s game engine. </li>
+                    </ul>
+
                 </div>
                 
                 
