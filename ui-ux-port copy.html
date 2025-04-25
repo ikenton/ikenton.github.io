@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<body class="pagePadding" style="background-color: #e6d7ff;" >
+<head>
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <meta name="author" content="Isabella Kenton">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-color: #d7c7e7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top:1%;
+            margin-left:2%;
+            margin-right:2%;
+            padding:10px;
+        }
+        .window {
+            width: 1300px;
+            height: 800px;
+            background: #ffb6c1;
+            border: 4px solid #ff69b4;
+            border-radius: 5px;
+            box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .title-bar {
+            background: #ff69b4;
+            padding: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        .buttons {
+            display: flex;
+            gap: 7px;
+        }
+        .button {
+            width: 12px;
+            height: 12px;
+            background: white;
+            border: 1px solid #ff1493;
+            border-radius: 50%;
+        }
+        .address-bar {
+            background: white;
+            margin: 6px;
+            padding: 3px;
+            border: 2px inset #ff69b4;
+            font-family: Arial, sans-serif;
+            letter-spacing: 1px;
+        }
+        .content {
+            flex-grow: 1;
+            background: white;
+            margin: 6px;
+            border: 2px inset #ff69b4;
+            overflow: hidden;
+            display: flex;
+        }
+        scrollbar {
+            width: 10px;
+            background: #ffb6c1;
+        }
+        .span {
+            font-size: 25px;
+            
+        }
+        .leftmargin {
+            margin:0px;
+            display: flex;
+            flex-direction: column;
+            /*padding:12px;
+            padding-top:20px;
+            padding-left:20px;*/
+            width:20%;
+            position:relative;
+            border-right: 10px solid #ffb6c1;
+            overflow-x:auto;
+            
+        }
+        .folderlinks {
+            font-size: 105%;
+            text-decoration: none;
+            color: rebeccapurple;
+            font-family: Arial, sans-serif;
+        }
+        .folder_icons {
+            width: 25px;
+            padding-right:10px;
+            transform: translatey(-3px);
+        }
+        .folder_div {
+            display: flex;
+            align-items: center;
+            /*gap: 10px;*/
+            padding:10px;
+            padding-left:20px;
+            padding-top:10px;
+            padding-bottom: 10px;
+        }
+        .rightmargin {
+            width:80%;
+            overflow-y: auto;
+        
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            color: rebeccapurple;
+        }
+        h2 {
+            font-family: Arial, sans-serif;
+            color: rebeccapurple;
+        }
+        h3 {
+            font-family: Arial, sans-serif;
+            color: rebeccapurple;
+        }
+        ul{
+            font-family: Arial, sans-serif;
+            color: rebeccapurple;
+        }
+        p {
+            font-family: Arial, sans-serif;
+            color: rebeccapurple;
+            font-size:110%;
+            line-height: 1.5;
+        }
+        .bulletpoints {
+            list-style-type: circle;
+            display:block;
+        }
+
+        #currenttab{
+            background-color: #c3defa;
+            /*border: 2.5px solid #7a99e8;*/
+            /*maybe do a light blue for the highlight? or switch out these pinks for a light robin blue*/
+        }
+
+        #inactivetab{
+            background-color: white;
+            /*border:2.5px solid white;*/
+        }
+        
+    </style>
+    <script>
+        function highlightInactiveFolder(x) {
+            if(x.id="inactivetab"){
+                x.style.background = "#e8f2fe";
+                //x.style.border = "2.5px solid #e3f1ff";
+            } 
+        }
+        function highlightActiveFolder(x) {
+            if(x.id="currenttab"){
+                x.style.background = "#a8d2ff";
+                //x.style.border = "2.5px solid #6087eb";
+                
+            } 
+        }
+        function unhighlightInactiveFolder(x) {
+            if(x.id="inactivetab"){
+                x.style.background = "white";
+                //x.style.border = "2.5px solid white";
+            } 
+        }
+        function unhighlightActiveFolder(x) {
+            if(x.id="Activetab"){
+                x.style.background = "#c3defa";
+                //x.style.border= "2.5px solid #7a99e8";
+            } 
+        }
+        
+        var flowerImages = ['images/UI UX/Home.png','images/UI UX/Menubar.png','images/UI UX/Product List.png','images/UI UX/Scroll.png'];
+        var flowerIndex = 0;
+
+        function updateFlowerImage(){
+            const flowerImage = document.getElementById('flower-image');
+            flowerImage.setAttribute('src', flowerImages[flowerIndex]);
+        }
+
+        function prevImage(index){
+            flowerIndex = (flowerIndex - 1 + flowerImages.length) % flowerImages.length;
+            updateFlowerImage();
+
+        }
+        function nextImage(index){
+            flowerIndex = (flowerIndex + 1) % flowerImages.length;
+            updateFlowerImage();
+        }
+    </script>
+</head>
+
+    <div class="window">
+        <div class="title-bar">
+            <span class="span">Isabella Kenton</span>
+            <div class="buttons">
+                <div class="button" style="background-color: greenyellow;"></div>
+                <div class="button" style="background-color: yellow;"></div>
+                <div class="button" style="background-color: red;"></div>
+            </div>
+        </div>
+        <!--add a hamburger icon next to the address bar-->
+        <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ UI-UX Portfolio </div>
+        <div class="content">
+            <div class="leftmargin"> <!--for mobile view I want the folders to either be at the top OR become a hamburger menu. make the left margin adjustable-->
+                <a class="folderlinks" href="index copy.html">
+                    <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">About Me</p>
+
+                    </div> 
+                </a>
+                <a class="folderlinks" href="Resume copy.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Resume</p>
+                    </div> 
+                </a>
+                <a class="folderlinks" href="coding projects copy.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Coding Projects</p>
+                    </div> 
+                </a>
+                
+                <a class="folderlinks" href="https://flumphik.itch.io/">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Game Development</p>
+                    </div>
+                </a>
+                <a class="folderlinks" href="ui-ux-port.html">
+                    <div class="folder_div" id="ActiveTab"onmouseover="highlightActiveFolder(this)" onmouseout="unhighlightActiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">UI/UX Portfolio</p>
+                    </div>
+                </a>
+                <a class="folderlinks" href="art.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Art</p>
+                    </div> 
+                </a>
+            </div>
+            <div class="rightmargin">
+                <h2 style="margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Dani's Flower Shop</h2>
+                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+                <p style="margin: 0px 70px;margin-top: 10px; padding-right: 30px;">Dani's Flower shop is a fictional website created as an exercise to develop my UI/UX skills. <br></p>
+                <div style="padding:10px;margin-left: 80px;">
+                    <img style="padding-right: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/left_arrow.png" alt="left arrow" onclick="prevImage()">
+                    
+                    <img style="display: inline-block; margin-top: 10px; width:75%;padding:10px;" src="images/UI UX/Home.png" id="flower-image" alt="Original portfolio website layout">
+                    
+                    <img style="padding-left: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/right_arrow.png" onclick="nextImage()" alt="right arrow">
+                    
+                </div>
+                
+                
+                <h2 style="display:inline-block; margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Love Quest</h2>
+                <a href="https://the64threalm.itch.io/love-quest">
+                    <img style="height:35px; transform: translateY(7px) translateX(-50px);" src="images/icons/itch_io_logo.png">
+                </a>
+                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+                
+                
+                <p style="margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
+                    Love Quest is an RPG created by the students of the CPP Game Development Club. Where the player must try to repair their toxic relationship or leave their partner. I created the UI for the quick time event "battles" where the player must avoid projectiles in order to succeed.
+                    
+                    <br><br> 
+                </p>
+                <img src="images/UI UX/LQ-UI.png" alt="Love Quest UI" style="height:250px;margin-left: 70px;padding-right: 20px;"/>
+        
+                <img src="images/UI UX/LQ-HUB.png" alt="Love Quest UI" style="height:250px;"/>
+                
+                
+
+                <h2 style="display:inline-block; margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Recipe Book Mobile App</h2>
+                <a href="https://github.com/ikenton/Recipe-Book-App">
+                    <img style="height:35px; transform: translateY(7px) translateX(-50px);" src="images/icons/github_PNG47.png" alt="App Github Repo">
+                </a>
+                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+                <h3 style="margin: 0px 70px;margin-top: 20px; padding-right: 30px;">Summary</h3>
+                <p style="margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
+                    An Android App that allowed a user to store recipes on their phone. They could add, delete, and even upload recipes from the internet. Users can add tags to recipes in order to filter and search for specific meals.
+                    
+                    <br><br> 
+                </p>
+                <h3 style="margin: 0px 70px;padding-right: 30px;">My Contributions</h3>
+                <p style=" margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
+                    I programmed the basic layout of the list of recipies and the recipe instructions, as well as created the functionality for creating and editting a recipe. 
+                     
+                </p>
+                <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;" src="images/UI UX/Recipe-Add-Edit.png" alt="Recipe Page">
+                <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;" src="images/UI UX/Recipe-List.png" alt="List of Recipes">
+
+
+
+                <h2 style="display:inline-block; margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">No Leg Up</h2>
+                <a href="https://the64threalm.itch.io/no-leg-up">
+                    <img style="height:35px; transform: translateY(7px) translateX(-50px);" src="images/icons/itch_io_logo.png">
+                </a>
+                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+                
+                
+                <p style="margin: 0px 70px;margin-top: 10px; margin-bottom: 50px; padding-right: 30px;">
+                    No Leg Up is a 2D platformer where the player must change the gravity to move through a dangerous obstacle course. I designed the layout for the main menu and the how to play screen. 
+                    <br><br> 
+                    <img src="images/UI UX/NLU-TitleScreen.png" alt="NLU Title Screen" style="width:48%; padding-right: 25px;"/>
+                    <img src="images/UI UX/NLU-how-to-play-2.png" alt="NLU Title Screen" style="width:48%;"/>
+                </p>
+                
+                
+        </div>
+    </div>
+</body>
+</html>
