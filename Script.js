@@ -34,3 +34,21 @@
     // Update the src attribute with the new image source
     popupImage.setAttribute('src', imageSources[currentIndex]);
   }
+
+  var websiteImages = ['images/Photos/before-about-page.png','images/Photos/before-coding-projects-1.png','images/Photos/before-coding-projects-2.png','images/Photos/before-resume-page.png'];
+  var webIndex = 0;
+
+  function updateWebImage(){
+    const webImage = document.getElementById('web-image');
+    webImage.setAttribute('src', websiteImages[webIndex]);
+  }
+
+  function prevWeb(index){
+    webIndex = (webIndex - 1 + websiteImages.length) % websiteImages.length;
+    updateWebImage();
+
+  }
+  function nextImage(index){
+    webIndex = (webIndex + 1) % websiteImages.length;
+    updateWebImage();
+  }
