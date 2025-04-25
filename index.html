@@ -1,217 +1,367 @@
 <!DOCTYPE html>
 <html>
-<body class="pagePadding" >
+<body class="pagePadding" style="background-color: #e6d7ff;" >
 <head>
     <link rel="stylesheet" href="stylesheet.css">
     <meta charset="UTF-8">
     <meta name="author" content="Isabella Kenton">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        background-color: #d7c7e7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:1%;
+        margin-left:2%;
+        margin-right:2%;
+        padding:10px;
+    }
+    .window {
+        width: 1300px;
+        height: 800px;
+        background: #ffb6c1;
+        border: 4px solid #ff69b4;
+        border-radius: 5px;
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+    .title-bar {
+        background: #ff69b4;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+    }
+    .buttons {
+        display: flex;
+        gap: 7px;
+    }
+    .button {
+        width: 12px;
+        height: 12px;
+        background: white;
+        border: 1px solid #ff1493;
+        border-radius: 50%;
+    }
+    .address-bar {
+        background: white;
+        margin: 6px;
+        padding: 3px;
+        border: 2px inset #ff69b4;
+        font-family: Arial, sans-serif;
+        letter-spacing: 1px;
+    }
+    .content {
+        flex-grow: 1;
+        background: white;
+        margin: 6px;
+        border: 2px inset #ff69b4;
+        overflow: hidden;
+        display: flex;
+    }
+    .scrollbar {
+        width: 10px;
+        background: #ffb6c1;
+    }
+    .span {
+        font-size: 25px;
+        
+    }
+    .leftmargin {
+        margin:0px;
+        display: flex;
+        flex-direction: column;
+        /*padding:12px;
+        padding-top:20px;
+        padding-left:20px;*/
+        width:20%;
+        position:relative;
+        border-right: 10px solid #ffb6c1;
+        overflow-x:auto;
+        
+    }
+    .folderlinks {
+        font-size: 105%;
+        text-decoration: none;
+        color: rebeccapurple;
+        font-family: Arial, sans-serif;
+    }
+    .folder_icons {
+        width: 25px;
+        padding-right:10px;
+        transform: translatey(-3px);
+    }
+    .folder_div {
+        display: flex;
+        align-items: center;
+        /*gap: 10px;*/
+        padding:10px;
+        padding-left:20px;
+        padding-top:10px;
+        padding-bottom: 10px;
+    }
+    .rightmargin {
+        width:80%;
+        overflow-y: auto;
+       
+    }
+    h1 {
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+    }
+    h2 {
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+    }
+    h3 {
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+    }
+    ul{
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+    }
+    p {
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+        font-size:110%;
+        line-height: 1.5;
+    }
+    .bulletpoints {
+        list-style-type: circle;
+        display:block;
+    }
+
+    #currenttab{
+        background-color: #c3defa;
+        /*border: 2.5px solid #7a99e8;*/
+        /*maybe do a light blue for the highlight? or switch out these pinks for a light robin blue*/
+    }
+
+    #inactivetab{
+        background-color: white;
+        /*border:2.5px solid white;*/
+    }
+    
+    </style>
+    <script>
+        function highlightInactiveFolder(x) {
+            if(x.id="inactivetab"){
+                x.style.background = "#e8f2fe";
+                //x.style.border = "2.5px solid #e3f1ff";
+            } 
+        }
+        function highlightActiveFolder(x) {
+            if(x.id="currenttab"){
+                x.style.background = "#a8d2ff";
+                //x.style.border = "2.5px solid #6087eb";
+                
+            } 
+        }
+        function unhighlightInactiveFolder(x) {
+            if(x.id="inactivetab"){
+                x.style.background = "white";
+                //x.style.border = "2.5px solid white";
+            } 
+        }
+        function unhighlightActiveFolder(x) {
+            if(x.id="Activetab"){
+                x.style.background = "#c3defa";
+                //x.style.border= "2.5px solid #7a99e8";
+            } 
+        }
+    </script>
 </head>
 
-
-<div class="headDiv">
-    <table style="width:100%; border-collapse: collapse;">
-        <tr >
-            <td> <h1 class="headerText">Isabella Kenton</h1></td>
-        </tr>
-        <tr>
-            <td style="border-top: 5px solid #032826;">
-                <div class="dropdown">
-                    <button class="dropdown-button">
-                        About Me
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="index.html">About Me</a>
-                        <a href="Resume.html">Resume</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropdown-button">
-                        Projects
-                    </button>
-                    <div class="dropdown-content" style="min-width: 210px;">
-                        <a href="CodingProjects.html">Coding Projects</a>
-                        <a href="https://flumphik.itch.io/">Game Development</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropdown-button">
-                        Portfolio
-                    </button>
-                    <div class="dropdown-content" style="min-width: 180px;">
-                        <a href="ui-ux-port.html">UI/UX Portfolio</a>
-                        <a href="art.html">Art</a>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
-<div class="spacing"></div>
-<div class="container">
-    <div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB; min-height: 310px;">
-        <table style="border-collapse: collapse; width: 100%;">
-            <tr>
-                <th style="padding-left: 30px; width:100%; text-align:left;border-bottom: 5px solid #032826;">
-                    <h1>About Me</h1>
-                </th>
-            <tr>
-                <td style="padding-top: 20px; padding-left: 30px;padding-bottom:20px;padding-right: 30px; font-size: 20px;">
-                    <p>Hello, I'm Isabella! I'm a recent graduate of Cal Poly Pomona where I earned my Bachelor's in Computer Science.</p>
-                    
-                    <p>I love to learn and grow my skills in Web and Game Development. I am passionate about creating </p>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div >
-        <img src="images/Photos/isabella-grad-photo.png" alt="Isabella Kenton" style="width:300px; border:7px solid  #032826; border-radius: 13px;">
-    </div>
-</div>
-<div class="spacing"></div>
-<div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB; ">
-    <table style="border-collapse: collapse; width: 100%;">
-        <tr>
-            <h1 style="padding-left: 30px; padding-bottom: 20px;  text-align:left;border-bottom: 5px solid #032826;">Skills</h1>
-        </tr>
-        <tr>
-            <div class="grid-container-2">
-                <div class="grid-item" >
-                    <img src="images/icons/Amazon_Web_Services_Logo.png" alt="AWS" style="width: 55px;"> 
-                    <br>AWS     
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/Android_Studio_Logo.png" alt="Android Studio" style="width:55px;">      
-                    <br>Android Studio
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/aws_amplify_logo.png" alt="AWS Amplify" style="width: 55px;">   
-                    <br>AWS Amplify  
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/C_Logo.png" alt="C" style="width: 55px;">     
-                    <br>C
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/csharp_logo.png" alt="C#" style="width: 55px;">
-                    <br>C#
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/C++_Logo.png" alt="C++" style="width:55px;">
-                    <br>C++
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/CSS3_logo.png" alt="CSS" style="width: 55px;">
-                    <br>CSS
-                </div>
-                <!------------------------------------------------------>
-                <div class="grid-item" >
-                    <img src="images/icons/Epic-Systems-Logo.png" alt="Hyperspace Epic" style="width: 55px;"> 
-                    <br>Hyperspace Epic     
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/eclipse_logo.png" alt="Eclipse" style="width:55px;">  
-                    <br>Eclipse    
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/figma_logo.png" alt="Figma" style="width: 55px;">     
-                    <br>Figma
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/flutter_logo.png" alt="Flutter" style="width: 55px;"> 
-                    <br>Flutter    
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/git_logo.png" alt="GIT" style="width: 55px;">
-                    <br>GIT
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/github_PNG47.png" alt="GitHub" style="width:55px;">
-                    <br>GitHub
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/Godot_logo.png" alt="Godot" style="width: 55px;">
-                    <br>Godot
-                </div>
-                <div class="grid-item" >
-                    <img src="images/icons/html5_logo.png" alt="HTML5" style="width: 55px;">  
-                    <br>HTML5    
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/java_logo.png" alt="Java" style="width:55px;"> 
-                    <br>Java     
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/JavaFX_Logo.png" alt="JavaFX" style="width: 85px;">   
-                    <br>JavaFX  
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/Kotlin_logo.png" alt="Kotlin" style="width: 55px;"> 
-                    <br>Kotlin    
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/krita_logo.png" alt="GIT" style="width: 55px;">
-                    <br>Krita
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/medtronic_logo.png" alt="Medtronic" style="width:85px;">
-                    <br>Medtronic
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/Mysql_logo.png" alt="Godot" style="width: 65px;">
-                    <br>MySQL
-                </div>
-                <!------------------------------------------------------>
-                <div class="grid-item" >
-                    <img src="images/icons/python_logo.png" alt="Python" style="width: 55px;"> 
-                    <br>Python     
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/Ren’Py_Logo.png" alt="Ren'Py" style="width:55px;"> 
-                    <br>Ren'Py     
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/Sql_logo.png" alt="JavaFX" style="width: 85px;">  
-                    <br>SQL   
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/unity_logo.png" alt="Unity" style="width: 55px;">   
-                    <br>Unity
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/visual-studio-code-icon.png" alt="Visual Studio Code" style="width: 55px;">
-                    <br>Visual Studio Code
-                </div>
-                <div class="grid-item">
-                    <img src="images/icons/Visual-Studio-logo.png" alt="Medtronic" style="width:85px;">
-                    <br>Visual Studio
-                </div>
-                
+    <div class="window">
+        <div class="title-bar">
+            <span class="span">Isabella Kenton</span>
+            <div class="buttons">
+                <div class="button" style="background-color: greenyellow;"></div>
+                <div class="button" style="background-color: yellow;"></div>
+                <div class="button" style="background-color: red;"></div>
             </div>
-        </tr>
-    </table>
-</div>
-<div class="spacing"></div>
-<div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB; ">
-    <table style="border-collapse: collapse; width: 100%; ">
-        <tr>
-            
-            <h1 style="padding-left: 30px; padding-bottom: 20px;  text-align:left;border-bottom: 5px solid #032826;">Socials</h1>
-            
-        </tr>
-        <tr >
-            <div class="grid-container-2" style="grid-template-columns: auto auto auto auto auto auto; "  >
-    
-                <div class="grid-item"><a href="https://github.com/ikenton"><img class="iconsPadding" src="images/icons/github_PNG47.png" alt="GitHub"></a></div>
-                <div class="grid-item"><a href="https://flumphik.itch.io/"><img class="iconsPadding" src="images/icons/itch_io_logo.png" alt="itch.io"></a></div>
-                <div class="grid-item"><a href="https://www.linkedin.com/in/isabella-kenton/"><img class="iconsPadding" src="images/icons/linkedin-icon.png" alt="linkedin"></a></div>
-                <div class="grid-item"><a href="https://www.instagram.com/flumphart/"><img class="iconsPadding" src="images/icons/Instagram_icon.png.png" alt="Instagram"></a></div>
-                <div class="grid-item"><a href="https://www.artstation.com/flumph"><img class="iconsPadding" src="images/icons/ArtStation_icon.png" alt="Art Station"></a></div>
-                
-            </div>
-        </tr>
-    </table>
-    
+        </div>
+        <!--add a hamburger icon next to the address bar-->
+        <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ AboutMe </div>
+        <div class="content">
+            <div class="leftmargin"> <!--for mobile view I want the folders to either be at the top OR become a hamburger menu. make the left margin adjustable-->
+                <a class="folderlinks" href="index copy.html">
+                    <div class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)" onmouseout="unhighlightActiveFolder(this)"> <!--item-->
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">About Me</p>
 
-</body>
+                    </div> 
+                </a>
+                <a class="folderlinks" href="Resume.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Resume</p>
+                    </div> 
+                </a>
+                <a class="folderlinks" href="CodingProjects.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Coding Projects</p>
+                    </div> 
+                </a>
+                
+                <a class="folderlinks" href="https://flumphik.itch.io/">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Game Development</p>
+                    </div>
+                </a>
+                <a class="folderlinks" href="ui-ux-port.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">UI/UX Portfolio</p>
+                    </div>
+                </a>
+                <a class="folderlinks" href="art.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Art</p>
+                    </div> 
+                </a>
+            </div>
+            <div class="rightmargin">
+                <div >
+                    <h1 style=" margin: 20px 70px;padding-top: 20px;">
+                        Welcome!
+                    </h1>
+                    <p style=" display: inline-block;padding-bottom: 20px; margin: 10px 70px;border-bottom: 2px solid #ff69b4;  ">
+                        My name is Isabella Kenton. I'm a recent graduate of Cal Poly Pomona where I earned my Bachelor's in Computer Science. I love to learn and grow my skills in Web Development, Game Design and Development, and IT. I am currently working towards earning my A+ Certification for technical support. 
+                    </p>
+                </div>
+                             
+                
+                
+                <div style="width: 96%; display: inline-block;margin:0px 0px; ">
+                    <h2 style="margin:20px 70px;  ">Tools and Skills</h2>
+                    <table style="border-collapse: collapse;  background: #ffb6c1;">
+                        
+                        <tr>
+                            <div class="grid-container-2"  style="margin:10px 70px; padding-bottom: 60px;">
+                                <div class="grid-item" >
+                                    <img src="images/icons/Amazon_Web_Services_Logo.png" alt="AWS" style="height: 55px;"> 
+                                    <br><p>AWS</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/Android_Studio_Logo.png" alt="Android Studio" style="height:55px;">      
+                                    <br><p>Android Studio</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/aws_amplify_logo.png" alt="AWS Amplify" style="height: 55px;">   
+                                    <br><P>AWS Amplify</P>  
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/C_Logo.png" alt="C" style="height: 55px;">     
+                                    <br><p>C</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/csharp_logo.png" alt="C#" style="height: 55px;">
+                                    <br><p>C#</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/C++_Logo.png" alt="C++" style="height:55px;">
+                                    <br><p>C++</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/CSS3_logo.png" alt="CSS" style="height: 55px;">
+                                    <br><p>CSS</p>
+                                </div>
+                                <!------------------------------------------------------>
+                                
+                                <div class="grid-item">
+                                    <img src="images/icons/eclipse_logo.png" alt="Eclipse" style="height: 55px;">  
+                                    <br><p>Eclipse</p>    
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/figma_logo.png" alt="Figma" style="height: 55px;">     
+                                    <br><p>Figma</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/flutter_logo.png" alt="Flutter" style="height: 55px;"> 
+                                    <br><p>Flutter </p>   
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/git_logo.png" alt="GIT" style="height: 55px;">
+                                    <br><p>GIT</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/github_PNG47.png" alt="GitHub" style="height:55px;">
+                                    <br><p>GitHub</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/Godot_logo.png" alt="Godot" style="height: 55px;">
+                                    <br><p>Godot</p>
+                                </div>
+                                <div class="grid-item" >
+                                    <img src="images/icons/html5_logo.png" alt="HTML5" style="height: 55px;">  
+                                    <br><p>HTML5 </p>   
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/java_logo.png" alt="Java" style="height: 55px;"> 
+                                    <br><p>Java</p>     
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/JavaFX_Logo.png" alt="JavaFX" style="height: 55px;">   
+                                    <br><p>JavaFX </p> 
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/Kotlin_logo.png" alt="Kotlin" style="height: 55px;"> 
+                                    <br><p>Kotlin </p>   
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/krita_logo.png" alt="GIT" style="height: 55px;">
+                                    <br><p>Krita</p>
+                                </div>
+                                
+                                <div class="grid-item">
+                                    <img src="images/icons/Mysql_logo.png" alt="Godot" style="height: 55px;">
+                                    <br><p>MySQL</p>
+                                </div>
+                                <!------------------------------------------------------>
+                                <div class="grid-item" >
+                                    <img src="images/icons/python_logo.png" alt="Python" style="height: 55px;"> 
+                                    <br><p>Python</p>     
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/Ren’Py_Logo.png" alt="Ren'Py" style="height: 55px;"> 
+                                    <br><p>Ren'Py</p>     
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/Sql_logo.png" alt="JavaFX" style="height: 55px;">  
+                                    <br><p>SQL</p>   
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/unity_logo.png" alt="Unity" style="height: 55px;">   
+                                    <br><p>Unity</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/visual-studio-code-icon.png" alt="Visual Studio Code" style="height: 55px;">
+                                    <br><p>Visual Studio Code</p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/Visual-Studio-logo.png" alt="Medtronic" style="height: 55px;;">
+                                    <br><p>Visual Studio</p>
+                                </div>
+                                
+                            </div>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+           
+                
+        </div>
+    </div>
 </html>
