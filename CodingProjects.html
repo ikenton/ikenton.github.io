@@ -1,201 +1,331 @@
 <!DOCTYPE html>
 <html>
-<body class="pagePadding" >
+<body class="pagePadding" style="background-color: #e6d7ff;" >
 <head>
     <link rel="stylesheet" href="stylesheet.css">
     <meta charset="UTF-8">
     <meta name="author" content="Isabella Kenton">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
 
 <style>
-
-    .dropdown-button{
-        background-color: #A8C1AB;
-        color: #032826;
-        padding: 16px;
-        font-size: 22px;
-        border: none;
-        cursor: pointer;
+    body {
+        background-color: #d7c7e7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:1%;
+        margin-left:2%;
+        margin-right:2%;
+        padding:10px;
     }
-    .dropdown-button:hover{
-        background-color: rgb(255, 255, 255);
-    }
-    
-    .dropdown {
+    .window {
+        width: 1300px;
+        height: 800px;
+        background: #ffb6c1;
+        border: 4px solid #ff69b4;
+        border-radius: 5px;
+        box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
         position: relative;
-        display: inline-block;
     }
-    
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 140px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-        border-top: 6px solid #032826;
-        border-right: 4px solid #032826;
-        border-left: 4px solid #032826;
-        border-bottom: 4px solid #032826;
+    .title-bar {
+        background: #ff69b4;
+        padding: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
     }
-      
-      /* Links inside the dropdown */
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
+    .buttons {
+        display: flex;
+        gap: 7px;
+    }
+    .button {
+        width: 12px;
+        height: 12px;
+        background: white;
+        border: 1px solid #ff1493;
+        border-radius: 50%;
+    }
+    .address-bar {
+        background: white;
+        margin: 6px;
+        padding: 3px;
+        border: 2px inset #ff69b4;
+        font-family: Arial, sans-serif;
+        letter-spacing: 1px;
+    }
+    .content {
+        flex-grow: 1;
+        background: white;
+        margin: 6px;
+        border: 2px inset #ff69b4;
+        overflow: hidden;
+        display: flex;
+    }
+    scrollbar {
+        width: 10px;
+        background: #ffb6c1;
+    }
+    .span {
+        font-size: 25px;
+        
+    }
+    .leftmargin {
+        margin:0px;
+        display: flex;
+        flex-direction: column;
+        /*padding:12px;
+        padding-top:20px;
+        padding-left:20px;*/
+        width:20%;
+        position:relative;
+        border-right: 10px solid #ffb6c1;
+        overflow-x:auto;
+        
+    }
+    .folderlinks {
+        font-size: 105%;
         text-decoration: none;
-        display: block;
-        font-size: 22px;
+        color: rebeccapurple;
+        font-family: Arial, sans-serif;
+    }
+    .folder_icons {
+        width: 25px;
+        padding-right:10px;
+        transform: translatey(-3px);
+    }
+    .folder_div {
+        display: flex;
+        align-items: center;
+        /*gap: 10px;*/
+        padding:10px;
+        padding-left:20px;
+        padding-top:10px;
+        padding-bottom: 10px;
+    }
+    .rightmargin {
+        width:80%;
+        overflow-y: auto;
+       
+    }
+    h1 {
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+    }
+    h2 {
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+    }
+    h3 {
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+    }
+    ul{
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+    }
+    p {
+        font-family: Arial, sans-serif;
+        color: rebeccapurple;
+        font-size:110%;
+        line-height: 1.5;
+    }
+    .bulletpoints {
+        list-style-type: circle;
+        display:block;
+    }
+
+    #currenttab{
+        background-color: #c3defa;
+        /*border: 2.5px solid #7a99e8;*/
+        /*maybe do a light blue for the highlight? or switch out these pinks for a light robin blue*/
+    }
+
+    #inactivetab{
+        background-color: white;
+        /*border:2.5px solid white;*/
     }
     
-    .dropdown-content a:hover {background-color: #e1e6e3}
-    
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-    
-    .dropdown:hover .dropbtn {
-      background-color: #3e8e41;
-    }
     </style>
-    
-<div class="headDiv">
-    <table style="width:100%; border-collapse: collapse;">
-        <tr >
-            <td> <h1 class="headerText">Isabella Kenton</h1></td>
-        </tr>
-        <tr>
-            <td style="border-top: 5px solid #032826;">
-                <div class="dropdown">
-                    <button class="dropdown-button">
-                        About Me
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="index.html">About Me</a>
-                        <a href="Resume.html">Resume</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropdown-button">
-                        Projects
-                    </button>
-                    <div class="dropdown-content" style="min-width: 210px;">
-                        <a href="CodingProjects.html">Coding Projects</a>
-                        <a href="https://flumphik.itch.io/">Game Development</a>
-                    </div>
-                </div>
-                <div class="dropdown">
-                    <button class="dropdown-button">
-                        Portfolio
-                    </button>
-                    <div class="dropdown-content" style="min-width: 180px;">
-                        <a href="ui-ux-port.html">UI/UX Portfolio</a>
-                        <a href="art.html">Art</a>
-                    </div>
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
-<div class="spacing"></div>
-<div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB;">
-    <table style="border-collapse: collapse; width: 100%;">
-        <tr>
-            <th style="padding-left: 30px; width:100%; text-align:left;border-bottom: 5px solid #032826;">
-                <h1>This Website!</h1>
-            </th>
-        <tr>
-            <td style="padding-top: 20px; padding-left: 30px;padding-bottom:20px;padding-right: 30px; font-size: 20px;">
-                <p>This is a work in progress project! I have a lot of plans for this website, particularly in the design and content of the website. I'm new to web development, but I'm very passionate about UI/UX design. I've developed multiple frontend designs for mobile apps and games. I aim to grow from this experience and continue do more projects like this.</p>
-            </td>
-        </tr>
-    </table>
-</div>
-<div class="spacing"></div>
-<div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB;">
-    <table style="border-collapse: collapse; width: 100%;">
-        <tr>
-            <th style="padding-left: 30px; width:100%; text-align:left;border-bottom: 5px solid #032826;">
-                <h1>Popcorn Teeth</h1>
-            </th>
-        <tr>
-            <td style="padding-top: 20px; padding-left: 30px;padding-bottom:20px;padding-right: 30px; font-size: 20px;">
-                <div class="container">
-                    <p >
-                        Popcorn Teeth is a horror visual novel. I was the main programmer, background artist, and sound designer. 
-                        
-                        <br> <br>
-                        Players play as Pita the Tooth Fairy who has been kidnapped by the circus and forced to perform every night. One night she gets an oppouritunity to escape. You must help her regain her strength, take back her wand and get revenge.<br>
-                        
-                        <br>The full game is available on <a href="https://aren5ei.itch.io/popcorn-teeth">itch.io</a></li>
-                    </p>
-                    <img src="images/art/pt-courtyard.png" alt="Popcorn Teeth, courtyard" class="image" style="width: 50%;padding-right:50px;padding-top:0.5%;padding-bottom:0.5%;">
+    <script>
+        function highlightInactiveFolder(x) {
+            if(x.id="inactivetab"){
+                x.style.background = "#e8f2fe";
+                //x.style.border = "2.5px solid #e3f1ff";
+            } 
+        }
+        function highlightActiveFolder(x) {
+            if(x.id="currenttab"){
+                x.style.background = "#a8d2ff";
+                //x.style.border = "2.5px solid #6087eb";
+                
+            } 
+        }
+        function unhighlightInactiveFolder(x) {
+            if(x.id="inactivetab"){
+                x.style.background = "white";
+                //x.style.border = "2.5px solid white";
+            } 
+        }
+        function unhighlightActiveFolder(x) {
+            if(x.id="Activetab"){
+                x.style.background = "#c3defa";
+                //x.style.border= "2.5px solid #7a99e8";
+            } 
+        }
+        
+        var websiteImages = ['images/Photos/before-about-page.png','images/Photos/before-coding-projects-1.png','images/Photos/before-coding-projects-2.png','images/Photos/before-resume-page.png'];
+        var webIndex = 0;
 
-                </div>
-                
-            </td>
-        </tr>
-    </table>
-</div>
-<div class="spacing"></div>
-<div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB;">
-    <table style="border-collapse: collapse; width: 100%;">
-        <tr>
-            <th style="padding-left: 30px; width:100%; text-align:left;border-bottom: 5px solid #032826;">
-                <h1>Recipe Book Mobile App</h1>
-            </th>
-        <tr>
-            <td style="padding-top: 20px; padding-left: 30px;padding-bottom:20px;padding-right: 30px; font-size: 20px;">
-                <div class="container">
-                    <img src="images/UI UX/Recipe-Add-Edit.png" alt="Create or Edit Recipe Page" class="image" style="width: 25%;padding-right:10px;padding-top:0.5%;padding-bottom:0.5%;">
-                    <img src="images/UI UX/Recipe-List.png" alt="Home Page recipes" class="image" style="width: 25%;padding-right:1%;padding-top:0.5%;padding-bottom:0.5%;">
-                    <p >
-                        An Android App that allowed a user to store recipes on their phone. They could add, delete, and even upload recipes from the internet. Users can add tags to recipes in order to filter and search for specific meals.
-                    </p>
-                </div>
-                
-                
-            </td>
-        </tr>
-    </table>
-</div>
-<div class="spacing"></div>
-<div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB;">
-    <table style="border-collapse: collapse; width: 100%;">
-        <tr>
-            <th style="padding-left: 30px; width:100%; text-align:left;border-bottom: 5px solid #032826;">
-                <h1>Mental Health App</h1>
-            </th>
-        <tr>
-            <td style="padding-top: 20px; padding-left: 30px;padding-bottom:20px;padding-right: 30px; font-size: 20px;">
-                The app was designed to keep track of the user's mental state by providing daily quizzes to determine the user's mental state, and it took data from their health app and tracked their screen time on social media using an API. The app provided users with resources available to help. If the app detected that the user's mental state was getting worse, the app would send a text notification out to the user's choice of 5 contacts. <br><br>
-                I worked as developer to set up the database, create queries, and connect the back and frontends.
-            </td>
-        </tr>
-    </table>
-</div>
-<div class="spacing"></div>
-<div style="color:#032826; border:7px solid  #032826; border-radius: 13px; background-color: #A8C1AB; ">
-    <table style="border-collapse: collapse; width: 100%; ">
-        <tr>
-            
-            <h1 style="padding-left: 30px; padding-bottom: 20px;  text-align:left;border-bottom: 5px solid #032826;">Socials</h1>
-            
-        </tr>
-        <tr >
-            <div class="grid-container-2" style="grid-template-columns: auto auto auto auto auto auto; "  >
-    
-                <div class="grid-item"><a href="https://github.com/ikenton"><img class="iconsPadding" src="images/icons/github_PNG47.png" alt="GitHub"></a></div>
-                <div class="grid-item"><a href="https://flumphik.itch.io/"><img class="iconsPadding" src="images/icons/itch_io_logo.png" alt="itch.io"></a></div>
-                <div class="grid-item"><a href="https://www.linkedin.com/in/isabella-kenton/"><img class="iconsPadding" src="images/icons/linkedin-icon.png" alt="linkedin"></a></div>
-                <div class="grid-item"><a href="https://www.instagram.com/flumphart/"><img class="iconsPadding" src="images/icons/Instagram_icon.png.png" alt="Instagram"></a></div>
-                <div class="grid-item"><a href="https://www.artstation.com/flumph"><img class="iconsPadding" src="images/icons/ArtStation_icon.png" alt="Art Station"></a></div>
-                
+        function updateWebImage(){
+            const webImage = document.getElementById('web-image');
+            webImage.setAttribute('src', websiteImages[webIndex]);
+        }
+
+        function prevImage(index){
+            webIndex = (webIndex - 1 + websiteImages.length) % websiteImages.length;
+            updateWebImage();
+
+        }
+        function nextImage(index){
+            webIndex = (webIndex + 1) % websiteImages.length;
+            updateWebImage();
+        }
+    </script>
+</head>
+
+    <div class="window">
+        <div class="title-bar">
+            <span class="span">Isabella Kenton</span>
+            <div class="buttons">
+                <div class="button" style="background-color: greenyellow;"></div>
+                <div class="button" style="background-color: yellow;"></div>
+                <div class="button" style="background-color: red;"></div>
             </div>
-        </tr>
-    </table>
-</div>
+        </div>
+        <!--add a hamburger icon next to the address bar-->
+        <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ Coding Projects </div>
+        <div class="content">
+            <div class="leftmargin"> <!--for mobile view I want the folders to either be at the top OR become a hamburger menu. make the left margin adjustable-->
+                <a class="folderlinks" href="index.html">
+                    <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">About Me</p>
 
+                    </div> 
+                </a>
+                <a class="folderlinks" href="Resume.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Resume</p>
+                    </div> 
+                </a>
+                <a class="folderlinks" href="CodingProjects.html">
+                    <div class="folder_div" id="Activetab"onmouseover="highlightActiveFolder(this)" onmouseout="unhighlightActiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Coding Projects</p>
+                    </div> 
+                </a>
+                
+                <a class="folderlinks" href="https://flumphik.itch.io/">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Game Development</p>
+                    </div>
+                </a>
+                <a class="folderlinks" href="ui-ux-port.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">UI/UX Portfolio</p>
+                    </div>
+                </a>
+                <a class="folderlinks" href="art.html">
+                    <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <img class="folder_icons" src="images\icons\retro_folders.png" />
+                        <p style="margin: 0px 0px; font-size: 100%;">Art</p>
+                    </div> 
+                </a>
+            </div>
+            <div class="rightmargin">
+                <h2 style="margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Portfolio Website</h2>
+                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+
+                <p style=" display: inline-block;margin: 0px 70px;margin-top: 20px; padding-right: 30px;">
+                    This website was originally created as a way to learn web design and development. Now it's a platform to showcase my coding projects, games, UI/UX, and art portfolios. I designed the layout using Figma and Krita, developed it with HTML, CSS and JavaScript using GitHub Pages. This project began in 2023, and I am continually making changes and finding new ways to improve it.
+                </p>
+                <div style="padding:10px;margin-left: 80px;">
+                    <img style="padding-right: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/left_arrow.png" alt="left arrow" onclick="prevImage()">
+                    
+                    <img style="display: inline-block; margin-top: 10px; width:75%;padding:10px;" src="images/Photos/before-about-page.png" id="web-image" alt="Original portfolio website layout">
+                    
+                    <img style="padding-left: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/right_arrow.png" onclick="nextImage()" alt="right arrow">
+                    
+                </div>
+                
+                <h2 style="display:inline-block; margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Popcorn Teeth</h2>
+                <a href="https://aren5ei.itch.io/popcorn-teeth">
+                    <img style="height:35px; transform: translateY(7px) translateX(-50px);" src="images/icons/itch_io_logo.png">
+                </a>
+                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+                
+                <h3 style="margin: 0px 70px;margin-top: 20px; padding-right: 30px;">Summary</h3>
+                <p style="margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
+                    
+                    Popcorn Teeth is a horror visual novel that was created by students of the CPP Game Development Club from 2023-2024. The story follows Pita the Tooth Fairy, who has been captured by the Striking Light Circus. In a weakened state from the Ringmaster's abuse, Pita must confront the Circus' performers and recover her wand from the Ringmaster.
+                    <br><br> 
+                </p>
+                <h3 style="margin: 0px 70px;padding-right: 30px;">My Contributions</h3>
+                <p style=" margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
+                    I was the lead programmer and background artist. I programmed all the dialog interactions, quick time events, animations and sound effects, and a custom achievement gallery. I implemented the script given to me by the writers and programmed 10 possible endings. In addition to programming I also created the background art for every scene in the game. 
+                </p>
+                <img style=" transform: translateX(30%);height:60%;padding:20px;" src="images/art/strikingLight.png" alt="Popcorn Teeth cover art">
+                
+
+                <h2 style="display:inline-block; margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Recipe Book Mobile App</h2>
+                <a href="https://github.com/ikenton/Recipe-Book-App">
+                    <img style="height:35px; transform: translateY(7px) translateX(-50px);" src="images/icons/github_PNG47.png" alt="App Github Repo">
+                </a>
+                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+                
+                <h3 style="margin: 0px 70px;margin-top: 20px; padding-right: 30px;">Summary</h3>
+                <p style="margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
+                    An Android App that allowed a user to store recipes on their phone. They could add, delete, and even upload recipes from the internet. Users can add tags to recipes in order to filter and search for specific meals.
+                    
+                    <br><br> 
+                </p>
+                <h3 style="margin: 0px 70px;padding-right: 30px;">My Contributions</h3>
+                <p style=" margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
+                    I programmed the basic layout of the list of recipies and the recipe instructions, as well as created the functionality for creating and editting a recipe. 
+                     
+                </p>
+                <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;" src="images/UI UX/Recipe-Add-Edit.png" alt="Popcorn Teeth cover art">
+                <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;" src="images/UI UX/Recipe-List.png" alt="Popcorn Teeth cover art">
+
+
+                <h2 style="display:inline-block; margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Mental Health Circle App</h2>
+                <a href="https://github.com/Farhan1232001/CS4800_CircleHealthApp">
+                    <img style="height:35px; transform: translateY(7px) translateX(-50px);" src="images/icons/github_PNG47.png" alt="App Github Repo">
+                </a>
+                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+                
+                <h3 style="margin: 0px 70px;margin-top: 20px; padding-right: 30px;">Summary</h3>
+                <p style="margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
+                    The app was designed to keep track of the user's mental state by providing daily quizzes to determine the user's mental state, and it took data from their health app and tracked their screen time on social media using an API. The app provided users with resources available to help. If the app detected that the user's mental state was getting worse, the app would send a text notification out to the user's choice of 5 contacts.
+                    
+                    <br><br> 
+                </p>
+                <h3 style="margin: 0px 70px;padding-right: 30px;">My Contributions</h3>
+                <p style=" margin: 0px 70px;margin-top: 10px; margin-bottom: 50px; padding-right: 30px;">
+                    I set up the backend, using AWS and GraphQL to create the database and queries. I created a feature that would collect information from other apps, such as the health app or any fitness app that would collect fitness information. I programmed the login page that had dual authentication with a text message.  
+                     
+                </p>
+            </div>
+                
+        </div>
+    </div>
 </body>
 </html>
