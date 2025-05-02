@@ -29,6 +29,48 @@
             flex-direction: column;
             position: relative;
         }
+        @media screen and (max-width:800px){
+        .window{
+            width: 600px;
+           
+        }
+        .content{
+            flex-direction: column;
+           
+        }
+        .leftmargin{
+            height: max-content;
+            border-bottom: 10px solid #ffb6c1;
+        }
+    }
+    @media screen and (max-width:600px){
+        .window{
+            flex-direction: column;
+            width:400px;
+        }
+        .leftmargin{
+            height: max-content;
+            border-right: none;
+            border-bottom: 10px solid #ffb6c1;;
+        }
+        
+    }
+   
+    @media screen and (max-height:700px){
+        .window{
+            height:600px;
+            flex-direction: column;
+        }
+        
+    }
+    @media screen and (max-height:800px){
+        .window{
+            height:700px;
+            flex-direction: column;
+        }
+        
+    }
+   
         .title-bar {
             background: #ff69b4;
             padding: 5px;
@@ -75,18 +117,12 @@
             
         }
         .leftmargin {
-            margin:0px;
-            display: flex;
-            flex-direction: column;
-            /*padding:12px;
-            padding-top:20px;
-            padding-left:20px;*/
-            width:20%;
-            position:relative;
-            border-right: 10px solid #ffb6c1;
-            overflow-x:auto;
-            
-        }
+        margin:0px;
+        display: flex;
+        flex-direction: column;
+        position:relative;
+        border-right: 10px solid #ffb6c1;        
+    }
         .folderlinks {
             font-size: 105%;
             text-decoration: none;
@@ -108,7 +144,7 @@
             padding-bottom: 10px;
         }
         .rightmargin {
-            width:80%;
+            width:100%;
             overflow-y: auto;
         
         }

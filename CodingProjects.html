@@ -29,6 +29,47 @@
         flex-direction: column;
         position: relative;
     }
+    @media screen and (max-width:800px){
+        .window{
+            width: 600px;
+           
+        }
+        .content{
+            flex-direction: column;
+           
+        }
+        .leftmargin{
+            height: max-content;
+            border-bottom: 10px solid #ffb6c1;
+        }
+    }
+    @media screen and (max-width:600px){
+        .window{
+            flex-direction: column;
+            width:400px;
+        }
+        .leftmargin{
+            height: max-content;
+            border-right: none;
+            border-bottom: 10px solid #ffb6c1;;
+        }
+        
+    }
+   
+    @media screen and (max-height:700px){
+        .window{
+            height:600px;
+            flex-direction: column;
+        }
+        
+    }
+    @media screen and (max-height:800px){
+        .window{
+            height:700px;
+            flex-direction: column;
+        }
+        
+    }
     .title-bar {
         background: #ff69b4;
         padding: 5px;
@@ -78,13 +119,8 @@
         margin:0px;
         display: flex;
         flex-direction: column;
-        /*padding:12px;
-        padding-top:20px;
-        padding-left:20px;*/
-        width:20%;
         position:relative;
         border-right: 10px solid #ffb6c1;
-        overflow-x:auto;
         
     }
     .folderlinks {
@@ -108,7 +144,7 @@
         padding-bottom: 10px;
     }
     .rightmargin {
-        width:80%;
+        width:100%;
         overflow-y: auto;
        
     }
@@ -259,7 +295,6 @@
                 </p>
                 <div style="padding:10px;margin-left: 80px;">
                     <img style="padding-right: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/left_arrow.png" alt="left arrow" onclick="prevImage()">
-                    
                     <img style="display: inline-block; margin-top: 10px; width:75%;padding:10px;" src="images/Photos/before-about-page.png" id="web-image" alt="Original portfolio website layout">
                     
                     <img style="padding-left: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/right_arrow.png" onclick="nextImage()" alt="right arrow">
