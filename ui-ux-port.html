@@ -55,17 +55,17 @@
         }
         
     }
-   
-    @media screen and (max-height:700px){
+    
+    @media screen and (max-height:500px){
         .window{
-            height:600px;
+            height:200px;
             flex-direction: column;
         }
         
     }
     @media screen and (max-height:800px){
         .window{
-            height:700px;
+            height:620px;
             flex-direction: column;
         }
         
@@ -117,12 +117,12 @@
             
         }
         .leftmargin {
-        margin:0px;
-        display: flex;
-        flex-direction: column;
-        position:relative;
-        border-right: 10px solid #ffb6c1;        
-    }
+            margin:0px;
+            flex-direction: column;
+            position:relative;
+            border-right: 10px solid #ffb6c1;   
+            width:max-content;     
+        }
         .folderlinks {
             font-size: 105%;
             text-decoration: none;
@@ -144,7 +144,6 @@
             padding-bottom: 10px;
         }
         .rightmargin {
-            width:100%;
             overflow-y: auto;
             margin-left:70px;
             padding-right: 60px;
@@ -175,7 +174,12 @@
             list-style-type: circle;
             display:block;
         }
-
+        .folder-desc{
+            margin: 0px 0px; 
+            font-size: 100%; 
+            width:max-content;
+        }
+        
         #currenttab{
             background-color: #c3defa;
             /*border: 2.5px solid #7a99e8;*/
@@ -220,7 +224,24 @@
 
         function updateFlowerImage(){
             const flowerImage = document.getElementById('flower-image');
+            var heightOfArea = document.getElementById('imageArea');
+            var arrowL = document.getElementById('arrowL');
+            var arrowR = document.getElementById('arrowR');
             flowerImage.setAttribute('src', flowerImages[flowerIndex]);
+            if(flowerIndex == 3){
+                heightOfArea.style.margin = "120px 0px 120px";
+                
+                
+                arrowL.style.transform = "translateY(-50px)";
+                arrowR.style.transform = "translateY(-50px)";
+
+            }else{
+                var heightOfArea = document.getElementById('imageArea');
+                heightOfArea.style.margin = "0px";
+                arrowL.style.transform = "translateY(-180px)";
+                arrowR.style.transform = "translateY(-180px)";
+
+            }
         }
 
         function prevImage(index){
@@ -251,39 +272,39 @@
                 <a class="folderlinks" href="index.html">
                     <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
                         <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">About Me</p>
+                        <p class="folder-desc">About Me</p>
 
                     </div> 
                 </a>
                 <a class="folderlinks" href="Resume.html">
                     <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
                         <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">Resume</p>
+                        <p class="folder-desc">Resume</p>
                     </div> 
                 </a>
                 <a class="folderlinks" href="CodingProjects.html">
                     <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
                         <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">Coding Projects</p>
+                        <p class="folder-desc">Coding Projects</p>
                     </div> 
                 </a>
                 
                 <a class="folderlinks" href="https://flumphik.itch.io/">
                     <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
                         <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">Game Development</p>
+                        <p class="folder-desc">Game Development</p>
                     </div>
                 </a>
                 <a class="folderlinks" href="ui-ux-port.html">
                     <div class="folder_div" id="currenttab"onmouseover="highlightActiveFolder(this)" onmouseout="unhighlightActiveFolder(this)">
                         <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">UI/UX Portfolio</p>
+                        <p class="folder-desc">UI/UX Portfolio</p>
                     </div>
                 </a>
                 <a class="folderlinks" href="art.html">
                     <div class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
                         <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">Art</p>
+                        <p class="folder-desc">Art</p>
                     </div> 
                 </a>
             </div>
@@ -291,12 +312,12 @@
                 <h2 style=" margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Dani's Flower Shop</h2>
                 <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; ">
                 <p style="margin-top: 10px; padding-right: 30px;">Dani's Flower shop is a fictional website created as an exercise to develop my UI/UX skills. <br></p>
-                <div style="padding:10px;">
-                    <img style="padding-right: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/left_arrow.png" alt="left arrow" onclick="prevImage()">
+                <div id="imageArea" style="padding:10px;">
+                    <img id="arrowL" style="padding-right: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/left_arrow.png" alt="left arrow" onclick="prevImage()">
                     
                     <img style="display: inline-block; margin-top: 10px; width:75%;padding:10px;" src="images/UI UX/Home.png" id="flower-image" alt="Original portfolio website layout">
                     
-                    <img style="padding-left: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/right_arrow.png" onclick="nextImage()" alt="right arrow">
+                    <img id="arrowR"style="padding-left: 20px; height:50px; display: inline-block; transform: translateY(-180px);" src="images/icons/right_arrow.png" onclick="nextImage()" alt="right arrow">
                     
                 </div>
                 
@@ -345,7 +366,7 @@
 
                 <h2 style="display:inline-block;  margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">No Leg Up</h2>
                 <a href="https://the64threalm.itch.io/no-leg-up">
-                    <img style="height:35px; transform: translateY(7px) " src="images/icons/itch_io_logo.png">
+                    <img style="height:35px; transform: translateY(7px)" src="images/icons/itch_io_logo.png">
                 </a>
                 <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; ">
                 
