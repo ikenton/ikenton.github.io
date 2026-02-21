@@ -1,0 +1,96 @@
+<div class="grid-item" >
+	<img src = "images/art/gaygodesses1.png" alt="image 0">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/CassadraAnkarna.png" alt="image 1">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/JaneGrey.png" alt="image 2">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/strikingLight.png" alt="image 3">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/selfportrait 2024.png" alt="image 4">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/blymanor2.png" alt="image 5">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/FearStreet.png" alt="image 6">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/Ada.png" alt="image 7">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/velrisasWings.png" alt="image 8">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/the ball.png" alt="image 9">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/ruth.png" alt="image 10">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/r.png" alt="image 11">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/pt-marlon-trailer.png" alt="image 12">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/pt-hugo-trailer.png" alt="image 13">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/pt-courtyard.png" alt="image 14">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/pt-cage-tent.png" alt="image 15">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/pt-bonnie trailer.png" alt="image 16">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/pita underneath.png" alt="image 17">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/pfpFinal.png" alt="image 18">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/nick.png" alt="image 19">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/maya.png" alt="image 20">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/july.png" alt="image 21">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/ivy.png" alt="image 22">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/fae.png" alt="image 23">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/ed2.png" alt="image 24">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/ed1.png" alt="image 25">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/charlie.png" alt="image 26">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/NLU-Background-1.png" alt="image 27">
+</div>
+<div class="grid-item" >
+	<img src = "images/art/GillianTidestrider.png" alt="image 28">
+</div>
+<div class="grid-item" >
+	<img src = " images/art/Coterie-Final-Product.png" alt="image 29">
+</div>
+<div class="grid-item" >
+	<img src = " images/art/BreeAndSelFin.png" alt="image 30">
+</div>
+<div class="grid-item" >
+	<img src = " images/art/ringmaster-trailer.png" alt="image 31">
+</div>
