@@ -313,14 +313,14 @@
             </div>
         </div>
         <!--add a hamburger icon next to the address bar-->
-        <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ AboutMe </div>
+        <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ Art </div>
         <div class="content">
             <div class="leftmargin">
                 <!--for mobile view I want the folders to either be at the top OR become a hamburger menu. make the left margin adjustable-->
                 <nav>
                     <a class="folderlinks" href="index.html">
-                        <span class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)"
-                            onmouseout="unhighlightActiveFolder(this)"> <!--item-->
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
                             <img class="folder_icons" src="images\icons\retro_folders.png" />
                             <p class="folder-desc">About Me</p>
 
@@ -358,8 +358,8 @@
                         </span>
                     </a>
                     <a class="folderlinks" href="art.html">
-                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
-                            onmouseout="unhighlightInactiveFolder(this)">
+                        <span class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)"
+                            onmouseout="unhighlightActiveFolder(this)">
                             <img class="folder_icons" src="images\icons\retro_folders.png" />
                             <p class="folder-desc">Art</p>
                         </span>
