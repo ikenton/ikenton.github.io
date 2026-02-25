@@ -10,15 +10,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <style>
-            h2{
-                margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;
+            h2 {
+                margin: 20px 70px;
+                margin-top: 40px;
+                margin-bottom: 0px;
+                padding-bottom: 10px;
             }
-            hr{
-                background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;
+
+            hr {
+                background-color: #ff69b4;
+                border-color: #ff69b400;
+                height: 1px;
+                width: 86%;
             }
-            p{
-                display: inline-block;margin: 0px 70px;margin-top: 20px; padding-right: 30px;
+
+            p {
+                display: inline-block;
+                margin: 0px 70px;
+                margin-top: 20px;
+                padding-right: 30px;
             }
+
             .grid-item {
 
                 border: 1px solid rgba(255, 255, 255, 0);
@@ -320,7 +332,7 @@
                     <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
                         onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
                         <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p class="folder-desc">About Me</p>
+                        <p style="margin: 0px 0px; font-size: 100%;">About Me</p>
 
                     </div>
                 </a>
@@ -346,7 +358,7 @@
                         <p class="folder-desc">Game Development</p>
                     </div>
                 </a>
-                <a class="folderlinks" href="ui-ux-port.html">
+                <a class="folderlinks" href="ui-ux-2.html">
                     <div class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)"
                         onmouseout="unhighlightActiveFolder(this)">
                         <img class="folder_icons" src="images\icons\retro_folders.png" />
@@ -369,77 +381,91 @@
                 </a>
             </div>
             <div class="rightmargin">
-                <h2 style="margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Dani's Flower
-                    Shop</h2>
-                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
-                <p style="display: inline-block;margin: 0px 70px;margin-top: 20px; padding-right: 30px;">Dani's Flower
-                    shop is a fictional website created as
-                    an exercise to develop my UI/UX skills. <br></p>
-                <div id="imageArea" style="padding:10px;">
-                    <img id="arrowL"
-                        style="padding-right: 20px; height:50px; display: inline-block; transform: translateY(-180px);"
-                        src="images/icons/left_arrow.png" alt="left arrow" onclick="prevImage()">
+                <!--<div style="margin:20px 70px;">
+                    <h2 style=" margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Dani's Flower
+                        Shop</h2>
+                    <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+                    <p style="display: inline-block;margin: 0px 70px;margin-top: 20px; padding-right: 30px;">Dani's
+                        Flower
+                        shop is a fictional website created as
+                        an exercise to develop my UI/UX skills. <br></p>
+                    <div id="imageArea" style="padding:10px;">
+                        <img id="arrowL"
+                            style="padding-right: 20px; height:50px; display: inline-block; transform: translateY(-180px);"
+                            src="images/icons/left_arrow.png" alt="left arrow" onclick="prevImage()">
 
-                    <img style="display: inline-block; margin-top: 10px; width:700px;padding:10px;"
-                        src="images/UI UX/Home.png" id="flower-image" alt="Original portfolio website layout">
+                        <img style="display: inline-block; margin-top: 10px; width:600px;padding:10px;"
+                            src="images/UI UX/Home.png" id="flower-image" alt="Original portfolio website layout">
 
-                    <img id="arrowR"
-                        style="padding-left: 20px; height:50px; display: inline-block; transform: translateY(-180px);"
-                        src="images/icons/right_arrow.png" onclick="nextImage()" alt="right arrow">
+                        <img id="arrowR"
+                            style="padding-left: 20px; height:50px; display: inline-block; transform: translateY(-180px);"
+                            src="images/icons/right_arrow.png" onclick="nextImage()" alt="right arrow">
+
+                    </div>
+                </div>
+
+
+                <div style="margin:20px 70px;">
+
+                    <h2 style="display:inline-block; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Love
+                        Quest
+                    </h2>
+                    <a href="https://the64threalm.itch.io/love-quest">
+                        <img style="height:35px; transform: translateY(7px) ;" src="images/icons/itch_io_logo.png">
+                    </a>
+                    <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; ">
+
+
+                    <p style="margin-top: 10px; padding-right: 30px;">
+                        Love Quest is an RPG created by the students of the CPP Game Development Club. Where the player
+                        must
+                        try to repair their toxic relationship or leave their partner. I created the UI for the quick
+                        time
+                        event "battles" where the player must avoid projectiles in order to succeed.
+
+                        <br><br>
+                    </p>
+                    <div>
+                        <img src="images/UI UX/LQ-UI.png" alt="Love Quest UI"
+                            style="height:250px;padding-right: 20px;" />
+
+                        <img src="images/UI UX/LQ-HUB.png" alt="Love Quest UI" style="height:250px;" />
+
+                    </div>
 
                 </div>
 
 
-                <h2 style="display:inline-block; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Love Quest
-                </h2>
-                <a href="https://the64threalm.itch.io/love-quest">
-                    <img style="height:35px; transform: translateY(7px) ;" src="images/icons/itch_io_logo.png">
-                </a>
-                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; ">
+                <div style="margin:20px 70px;">
 
+                    <h2 style="display:inline-block; margin-top: 40px; ">Recipe Book Mobile App</h2>
+                    <a href="https://github.com/ikenton/Recipe-Book-App">
+                        <img style="height:35px; transform: translateY(7px) " src="images/icons/github_PNG47.png"
+                            alt="App Github Repo">
+                    </a>
+                    <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; ">
+                    <h3 style="margin-top: 20px; padding-right: 30px;">Summary</h3>
+                    <p style="margin-top: 10px; padding-right: 30px;">
+                        An Android App that allowed a user to store recipes on their phone. They could add, delete, and
+                        even
+                        upload recipes from the internet. Users can add tags to recipes in order to filter and search
+                        for
+                        specific meals.
 
-                <p style="margin-top: 10px; padding-right: 30px;">
-                    Love Quest is an RPG created by the students of the CPP Game Development Club. Where the player must
-                    try to repair their toxic relationship or leave their partner. I created the UI for the quick time
-                    event "battles" where the player must avoid projectiles in order to succeed.
+                        <br><br>
+                    </p>
+                    <h3 style="padding-right: 30px;">My Contributions</h3>
+                    <p style=" margin-top: 10px; padding-right: 30px;">
+                        I programmed the basic layout of the list of recipies and the recipe instructions, as well as
+                        created the functionality for creating and editting a recipe.
 
-                    <br><br>
-                </p>
-                <div>
-                    <img src="images/UI UX/LQ-UI.png" alt="Love Quest UI" style="height:250px;padding-right: 20px;" />
-
-                    <img src="images/UI UX/LQ-HUB.png" alt="Love Quest UI" style="height:250px;" />
+                    </p>
+                    <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;"
+                        src="images/UI UX/Recipe-Add-Edit.png" alt="Recipe Page">
+                    <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;"
+                        src="images/UI UX/Recipe-List.png" alt="List of Recipes">
 
                 </div>
-
-
-
-                <h2 style="display:inline-block; margin-top: 40px; ">Recipe Book Mobile App</h2>
-                <a href="https://github.com/ikenton/Recipe-Book-App">
-                    <img style="height:35px; transform: translateY(7px) " src="images/icons/github_PNG47.png"
-                        alt="App Github Repo">
-                </a>
-                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; ">
-                <h3 style="margin-top: 20px; padding-right: 30px;">Summary</h3>
-                <p style="margin-top: 10px; padding-right: 30px;">
-                    An Android App that allowed a user to store recipes on their phone. They could add, delete, and even
-                    upload recipes from the internet. Users can add tags to recipes in order to filter and search for
-                    specific meals.
-
-                    <br><br>
-                </p>
-                <h3 style="padding-right: 30px;">My Contributions</h3>
-                <p style=" margin-top: 10px; padding-right: 30px;">
-                    I programmed the basic layout of the list of recipies and the recipe instructions, as well as
-                    created the functionality for creating and editting a recipe.
-
-                </p>
-                <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;"
-                    src="images/UI UX/Recipe-Add-Edit.png" alt="Recipe Page">
-                <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;"
-                    src="images/UI UX/Recipe-List.png" alt="List of Recipes">
-
-
 
                 <h2 style="display:inline-block;  margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">No Leg Up
                 </h2>
@@ -479,7 +505,7 @@
                     </a>
                 </div>
 
-            </div>
+            </div>-->
         </div>
 </body>
 
