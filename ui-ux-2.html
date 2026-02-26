@@ -256,22 +256,39 @@
                 }
             }
 
-            var websiteImages = ['images/Photos/before-about-page.png', 'images/Photos/before-coding-projects-1.png', 'images/Photos/before-coding-projects-2.png', 'images/Photos/before-resume-page.png'];
-            var webIndex = 0;
+            var flowerImages = ['images/UI UX/Home.png', 'images/UI UX/Menubar.png', 'images/UI UX/Product List.png', 'images/UI UX/Scroll.png'];
+            var flowerIndex = 0;
 
-            function updateWebImage() {
-                const webImage = document.getElementById('web-image');
-                webImage.setAttribute('src', websiteImages[webIndex]);
+            function updateFlowerImage() {
+                const flowerImage = document.getElementById('flower-image');
+                var heightOfArea = document.getElementById('imageArea');
+                var arrowL = document.getElementById('arrowL');
+                var arrowR = document.getElementById('arrowR');
+                flowerImage.setAttribute('src', flowerImages[flowerIndex]);
+                if (flowerIndex == 3) {
+                    heightOfArea.style.margin = "120px 0px 120px";
+
+
+                    arrowL.style.transform = "translateY(-50px)";
+                    arrowR.style.transform = "translateY(-50px)";
+
+                } else {
+                    var heightOfArea = document.getElementById('imageArea');
+                    heightOfArea.style.margin = "0px";
+                    arrowL.style.transform = "translateY(-180px)";
+                    arrowR.style.transform = "translateY(-180px)";
+
+                }
             }
 
             function prevImage(index) {
-                webIndex = (webIndex - 1 + websiteImages.length) % websiteImages.length;
-                updateWebImage();
+                flowerIndex = (flowerIndex - 1 + flowerImages.length) % flowerImages.length;
+                updateFlowerImage();
 
             }
             function nextImage(index) {
-                webIndex = (webIndex + 1) % websiteImages.length;
-                updateWebImage();
+                flowerIndex = (flowerIndex + 1) % flowerImages.length;
+                updateFlowerImage();
             }
         </script>
     </head>
@@ -343,135 +360,32 @@
                 </a>
             </div>
             <div class="rightmargin">
-                <h2 style="margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">Portfolio
-                    Website</h2>
+
+                <h2 style="margin:20px 70px; margin-bottom: 0px;  padding-bottom:10px;">Dani's
+                    Flower
+                    Shop</h2>
                 <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
 
                 <p style=" display: inline-block;margin: 0px 70px;margin-top: 20px; padding-right: 30px;">
-                    This website was originally created as a way to learn web design and development. Now it's a
-                    platform to showcase my coding projects, games, UI/UX, and art portfolios. I designed the layout
-                    using Figma and Krita, developed it with HTML, CSS and JavaScript using GitHub Pages. This project
-                    began in 2023, and I am continually making changes and finding new ways to improve it.
+                    Dani's
+                    Flower
+                    shop is a fictional website created as
+                    an exercise to develop my UI/UX skills.
                 </p>
-                <div style="padding:10px;margin-left: 80px;">
-                    <img style="padding-right: 20px; height:50px; display: inline-block; transform: translateY(-180px);"
+                <div style="padding:10px;margin-left: 80px;  height: 400px;">
+                    <img style="padding-right: 20px ;padding-bottom:150px; height:50px; display: inline-block; "
                         src="images/icons/left_arrow.png" alt="left arrow" onclick="prevImage()">
                     <img style="display: inline-block; margin-top: 10px; width:75%;padding:10px;"
-                        src="images/Photos/before-about-page.png" id="web-image"
-                        alt="Original portfolio website layout">
+                        src="images/UI UX/Home.png" id="flower-image" alt="Dani Flower Shop Home Page">
 
-                    <img style="padding-left: 20px; height:50px; display: inline-block; transform: translateY(-180px);"
+                    <img style="padding-left: 20px; padding-bottom:150px; height:50px;display: inline-block;  "
                         src="images/icons/right_arrow.png" onclick="nextImage()" alt="right arrow">
 
                 </div>
 
-                <h2
-                    style="display:inline-block; margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">
-                    Popcorn Teeth</h2>
-                <a href="https://aren5ei.itch.io/popcorn-teeth">
-                    <img style="height:35px; transform: translateY(7px) translateX(-50px);"
-                        src="images/icons/itch_io_logo.png">
-                </a>
-                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
-
-                <h3 style="margin: 0px 70px;margin-top: 20px; padding-right: 30px;">Summary</h3>
-                <p style="margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
-
-                    Popcorn Teeth is a horror visual novel that was created by students of the CPP Game Development Club
-                    from 2023-2024. The story follows Pita the Tooth Fairy, who has been captured by the Striking Light
-                    Circus. In a weakened state from the Ringmaster's abuse, Pita must confront the Circus' performers
-                    and recover her wand from the Ringmaster.
-                    <br><br>
-                </p>
-                <h3 style="margin: 0px 70px;padding-right: 30px;">My Contributions</h3>
-                <p style=" margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
-                    I was the lead programmer and background artist. I programmed all the dialog interactions, quick
-                    time events, animations and sound effects, and a custom achievement gallery. I implemented the
-                    script given to me by the writers and programmed 10 possible endings. In addition to programming I
-                    also created the background art for every scene in the game.
-                </p>
-                <img style=" transform: translateX(30%);height:60%;padding:20px;" src="images/art/strikingLight.png"
-                    alt="Popcorn Teeth cover art">
-
-                <br>
-                <h2
-                    style="display:inline-block; margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">
-                    Recipe Book Mobile App</h2>
-                <a href="https://github.com/ikenton/Recipe-Book-App">
-                    <img style="height:35px; transform: translateY(7px) translateX(-50px);"
-                        src="images/icons/github_PNG47.png" alt="App Github Repo">
-                </a>
-                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
-
-                <h3 style="margin: 0px 70px;margin-top: 20px; padding-right: 30px;">Summary</h3>
-                <p style="margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
-                    An Android App that allowed a user to store recipes on their phone. They could add, delete, and even
-                    upload recipes from the internet. Users can add tags to recipes in order to filter and search for
-                    specific meals.
-
-                    <br><br>
-                </p>
-                <h3 style="margin: 0px 70px;padding-right: 30px;">My Contributions</h3>
-                <p style=" margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
-                    I programmed the basic layout of the list of recipies and the recipe instructions, as well as
-                    created the functionality for creating and editting a recipe.
-
-                </p>
-                <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;"
-                    src="images/UI UX/Recipe-Add-Edit.png" alt="Popcorn Teeth cover art">
-                <img style=" margin-left: 120px; margin-top: 10px; height:60%;padding:10px;"
-                    src="images/UI UX/Recipe-List.png" alt="Popcorn Teeth cover art">
 
 
-                <h2
-                    style="display:inline-block; margin:20px 70px; margin-top: 40px; margin-bottom: 0px;  padding-bottom:10px;">
-                    Mental Health Circle App</h2>
-                <a href="https://github.com/Farhan1232001/CS4800_CircleHealthApp">
-                    <img style="height:35px; transform: translateY(7px) translateX(-50px);"
-                        src="images/icons/github_PNG47.png" alt="App Github Repo">
-                </a>
-                <hr style="background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
 
-                <h3 style="margin: 0px 70px;margin-top: 20px; padding-right: 30px;">Summary</h3>
-                <p style="margin: 0px 70px;margin-top: 10px; padding-right: 30px;">
-                    The app was designed to keep track of the user's mental state by providing daily quizzes to
-                    determine the user's mental state, and it took data from their health app and tracked their screen
-                    time on social media using an API. The app provided users with resources available to help. If the
-                    app detected that the user's mental state was getting worse, the app would send a text notification
-                    out to the user's choice of 5 contacts.
-
-                    <br><br>
-                </p>
-                <h3 style="margin: 0px 70px;padding-right: 30px;">My Contributions</h3>
-                <p style=" margin: 0px 70px;margin-top: 10px; margin-bottom: 50px; padding-right: 30px;">
-                    I set up the backend, using AWS and GraphQL to create the database and queries. I created a feature
-                    that would collect information from other apps, such as the health app or any fitness app that would
-                    collect fitness information. I programmed the login page that had dual authentication with a text
-                    message.
-
-                </p>
-                <h2 style="margin:20px 70px; margin-top: 0px; margin-bottom: 0px;  padding-bottom:10px;">
-                    Socials</h2>
-                <hr
-                    style="margin-left: 70px; background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
-
-                <div style="padding-bottom: 30px; margin-left: 70px;">
-                    <a style=" text-decoration: none;" href="https://github.com/ikenton">
-                        <img style="height: 45px; padding:20px; padding-left: 0px;" src="images/icons/github_PNG47.png"
-                            alt="GitHub Profile">
-                    </a>
-                    <a style="text-decoration: none;" href="https://flumphik.itch.io/">
-                        <img style="height: 45px; padding:20px;" src="images/icons/itch_io_logo.png "
-                            alt="itch.io profile">
-                    </a>
-                    <a style="text-decoration: none;" href="https://www.linkedin.com/in/isabella-kenton/">
-                        <img style="height: 45px;padding:20px;" src="images/icons/linkedin-icon.png"
-                            alt="Linkedin Profile">
-                    </a>
-                    <a style="text-decoration: none;" href="https://www.artstation.com/flumph">
-                        <img style="height: 45px;padding:20px;" src="images/icons/ArtStation_icon.png" alt="">
-                    </a>
-                </div>
             </div> <!--right margin-->
 
         </div>
