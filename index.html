@@ -1,235 +1,274 @@
 <!DOCTYPE html>
 <html>
-<body class="pagePadding" style="background-color: #e6d7ff;" >
-<head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Isabella Kenton">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet.css">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-<style>
-    .grid-item{
-    
-    border: 1px solid rgba(255, 255, 255, 0);
-    text-align:center;
-    padding-bottom: 5px;
-    align-self: center;
-    }
-    .grid-container-2 {
-        display: grid;
-        grid-template-columns: auto auto auto auto auto   ;
-        padding: 10px;
-    }
-    body {
-        background-color: #d7c7e7;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top:1%;
-        margin-left:2%;
-        margin-right:2%;
-        padding:10px;
-    }
-    .window {
-        width: 1300px;
-        height: 800px;
-        background: #ffb6c1;
-        border: 4px solid #ff69b4;
-        border-radius: 5px;
-        box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
-        display: flex;
-        flex-direction: column;
-        position: relative;
-    }
-    @media screen and (max-width:800px){
-        .window{
-            width: 600px;
-           
-        }
-        .content{
-            flex-direction: column;
-           
-        }
-        .leftmargin{
-            height: max-content;
-            border-bottom: 5px solid #ffb6c1;
-        }
-    }
-    @media screen and (max-width:600px){
-        .window{
-            flex-direction: column;
-            width:400px;
-        }
-        .leftmargin{
-            height: max-content;
-            border-right: none;
-            border-bottom: 5px solid #ffb6c1;;
-        }
-        
-    }
-   
-    
-    @media screen and (max-height:800px){
-        .window{
-            height:620px;
-            flex-direction: column;
-            padding:0px;
-        }
-        
-    }
-   
-    .title-bar {
-        background: #ff69b4;
-        padding: 5px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: white;
-        font-family: Arial, sans-serif;
-        font-size: 14px;
-    }
-    .buttons {
-        display: flex;
-        gap: 7px;
-    }
-    .button {
-        width: 12px;
-        height: 12px;
-        background: white;
-        border: 1px solid #ff1493;
-        border-radius: 50%;
-    }
-    .address-bar {
-        background: white;
-        margin: 6px;
-        padding: 3px;
-        border: 2px inset #ff69b4;
-        font-family: Arial, sans-serif;
-        letter-spacing: 1px;
-    }
-    .content {
-        flex-grow: 1;
-        background: white;
-        margin: 6px;
-        border: 2px inset #ff69b4;
-        overflow: hidden;
-        display: flex;
-    }
-    .scrollbar {
-        width: 10px;
-        background: #ffb6c1;
-    }
-    .span {
-        font-size: 25px;
-        
-    }
-    .leftmargin {
-        margin:0px;
-        display: flex;
-        flex-direction: column;
-        position:relative;
-        border: 2px inset #ff69b4;  
-        border-right: none;
-    }
-    .folderlinks {
-        font-size: 105%;
-        text-decoration: none;
-        color: rebeccapurple;
-        font-family: Arial, sans-serif;
-    }
-    .folder_icons {
-        width: 25px;
-        padding-right:10px;
-        transform: translatey(-3px);
-    }
-    .folder_div {
-        display: flex;
-        align-items: center;
-        /*gap: 10px;*/
-        padding:10px;
-        padding-left:20px;
-        padding-top:10px;
-        padding-bottom: 10px;
-    }
-    .rightmargin {
-        width:100%;
-        overflow-y: auto;
-        border: 2px inset #ff69b4;    
-        border-left: 4px inset #ff69b4;
-    }
-    h1 {
-        font-family: Arial, sans-serif;
-        color: rebeccapurple;
-    }
-    h2 {
-        font-family: Arial, sans-serif;
-        color: rebeccapurple;
-    }
-    h3 {
-        font-family: Arial, sans-serif;
-        color: rebeccapurple;
-    }
-    ul{
-        font-family: Arial, sans-serif;
-        color: rebeccapurple;
-    }
-    p {
-        font-family: Arial, sans-serif;
-        color: rebeccapurple;
-        font-size:110%;
-        line-height: 1.5;
-    }
-    .bulletpoints {
-        list-style-type: circle;
-        display:block;
-    }
-    .folder-desc{
-        margin: 0px 0px; 
-        font-size: 100%; 
-        width:max-content;
-    }
-    #currenttab{
-        background-color: #c3defa;
-        /*border: 2.5px solid #7a99e8;*/
-        /*maybe do a light blue for the highlight? or switch out these pinks for a light robin blue*/
-    }
+<body class="pagePadding" style="background-color: #e6d7ff;">
 
-    #inactivetab{
-        background-color: white;
-        /*border:2.5px solid white;*/
-    }
-    
-    </style>
-    <script>
-        function highlightInactiveFolder(x) {
-            if(x.id="inactivetab"){
-                x.style.background = "#e8f2fe";
-                //x.style.border = "2.5px solid #e3f1ff";
-            } 
-        }
-        function highlightActiveFolder(x) {
-            if(x.id="currenttab"){
-                x.style.background = "#a8d2ff";
-                //x.style.border = "2.5px solid #6087eb";
-                
-            } 
-        }
-        function unhighlightInactiveFolder(x) {
-            if(x.id="inactivetab"){
-                x.style.background = "white";
-                //x.style.border = "2.5px solid white";
-            } 
-        }
-        function unhighlightActiveFolder(x) {
-            if(x.id="Activetab"){
-                x.style.background = "#c3defa";
-                //x.style.border= "2.5px solid #7a99e8";
-            } 
-        }
-    </script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Isabella Kenton">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesheet.css">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+            crossorigin="anonymous"></script>
+        <style>
+            .grid-item {
+
+                border: 1px solid rgba(255, 255, 255, 0);
+                text-align: center;
+                padding-bottom: 5px;
+                align-self: center;
+            }
+
+            .grid-container-2 {
+                display: grid;
+                grid-template-columns: auto auto auto auto auto;
+                padding: 10px;
+            }
+
+            body {
+                background-color: #d7c7e7;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 1%;
+                margin-left: 2%;
+                margin-right: 2%;
+                padding: 10px;
+            }
+
+            .window {
+                width: 1300px;
+                height: 800px;
+                background: #ffb6c1;
+                border: 4px solid #ff69b4;
+                border-radius: 5px;
+                box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+                display: flex;
+                flex-direction: column;
+                position: relative;
+            }
+
+            @media screen and (max-width:800px) {
+                .window {
+                    width: 600px;
+
+                }
+
+                .content {
+                    flex-direction: column;
+
+                }
+
+                .leftmargin {
+                    height: max-content;
+                    border-bottom: 5px solid #ffb6c1;
+                }
+            }
+
+            @media screen and (max-width:600px) {
+                .window {
+                    flex-direction: column;
+                    width: 400px;
+                }
+
+                .leftmargin {
+                    height: max-content;
+                    border-right: none;
+                    border-bottom: 5px solid #ffb6c1;
+                    ;
+                }
+
+            }
+
+
+            @media screen and (max-height:800px) {
+                .window {
+                    height: 620px;
+                    flex-direction: column;
+                    padding: 0px;
+                }
+
+            }
+
+            .title-bar {
+                background: #ff69b4;
+                padding: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+            }
+
+            .buttons {
+                display: flex;
+                gap: 7px;
+            }
+
+            .button {
+                width: 12px;
+                height: 12px;
+                background: white;
+                border: 1px solid #ff1493;
+                border-radius: 50%;
+            }
+
+            .address-bar {
+                background: white;
+                margin: 6px;
+                padding: 3px;
+                border: 2px inset #ff69b4;
+                font-family: Arial, sans-serif;
+                letter-spacing: 1px;
+            }
+
+            .content {
+                flex-grow: 1;
+                background: white;
+                margin: 6px;
+                border: 2px inset #ff69b4;
+                overflow: hidden;
+                display: flex;
+            }
+
+            .scrollbar {
+                width: 10px;
+                background: #ffb6c1;
+            }
+
+            .span {
+                font-size: 25px;
+
+            }
+
+            .leftmargin {
+                margin: 0px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                border: 2px inset #ff69b4;
+                border-right: none;
+            }
+
+            .folderlinks {
+                font-size: 105%;
+                text-decoration: none;
+                color: rebeccapurple;
+                font-family: Arial, sans-serif;
+            }
+
+            .folder_icons {
+                width: 25px;
+                padding-right: 10px;
+                transform: translatey(-3px);
+            }
+
+            .folder_div {
+                display: flex;
+                align-items: center;
+                padding: 10px;
+                padding-left: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+            .rightmargin {
+                width: 100%;
+                overflow-y: auto;
+                border: 2px inset #ff69b4;
+                border-left: 4px inset #ff69b4;
+            }
+
+            h1 {
+                font-family: Arial, sans-serif;
+                color: rebeccapurple;
+            }
+
+            h2 {
+                font-family: Arial, sans-serif;
+                color: rebeccapurple;
+            }
+
+            h3 {
+                font-family: Arial, sans-serif;
+                color: rebeccapurple;
+            }
+
+            hr {
+                margin-left: 70px;
+                background-color: #ff69b4;
+                border-color: #ff69b400;
+                height: 1px;
+                width: 86%;
+            }
+
+            ul {
+                font-family: Arial, sans-serif;
+                color: rebeccapurple;
+            }
+
+            p {
+                font-family: Arial, sans-serif;
+                color: rebeccapurple;
+                font-size: 110%;
+                line-height: 1.5;
+            }
+
+            .bulletpoints {
+                list-style-type: circle;
+                display: block;
+            }
+
+            .folder-desc {
+                margin: 0px 0px;
+                font-size: 100%;
+                width: max-content;
+            }
+
+            #currenttab {
+                background-color: #c3defa;
+                /*border: 2.5px solid #7a99e8;*/
+                /*maybe do a light blue for the highlight? or switch out these pinks for a light robin blue*/
+            }
+
+            #inactivetab {
+                background-color: white;
+                /*border:2.5px solid white;*/
+            }
+        </style>
+        <script>
+            function highlightInactiveFolder(x) {
+                if (x.id = "inactivetab") {
+                    x.style.background = "#e8f2fe";
+                    //x.style.border = "2.5px solid #e3f1ff";
+                }
+            }
+            function highlightActiveFolder(x) {
+                if (x.id = "currenttab") {
+                    x.style.background = "#a8d2ff";
+                    //x.style.border = "2.5px solid #6087eb";
+
+                }
+            }
+            function unhighlightInactiveFolder(x) {
+                if (x.id = "inactivetab") {
+                    x.style.background = "white";
+                    //x.style.border = "2.5px solid white";
+                }
+            }
+            function unhighlightActiveFolder(x) {
+                if (x.id = "Activetab") {
+                    x.style.background = "#c3defa";
+                    //x.style.border= "2.5px solid #7a99e8";
+                }
+            }
+        </script>
+    </head>
 
     <div class="window">
         <div class="title-bar">
@@ -243,45 +282,54 @@
         <!--add a hamburger icon next to the address bar-->
         <div class="address-bar" style="font-size: 18px; color: rebeccapurple;">C:\ AboutMe </div>
         <div class="content">
-            <div class="leftmargin"> <!--for mobile view I want the folders to either be at the top OR become a hamburger menu. make the left margin adjustable-->
+            <div class="leftmargin">
+                <!--for mobile view I want the folders to either be at the top OR become a hamburger menu. make the left margin adjustable-->
                 <nav>
                     <a class="folderlinks" href="index.html">
-                        <span class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)" onmouseout="unhighlightActiveFolder(this)"> <!--item-->
+                        <span class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)"
+                            onmouseout="unhighlightActiveFolder(this)"> <!--item-->
                             <img class="folder_icons" src="images\icons\retro_folders.png" />
                             <p class="folder-desc">About Me</p>
 
-                        </span> 
+                        </span>
                     </a>
                     <a class="folderlinks" href="Resume.html">
-                        <span class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
                             <img class="folder_icons" src="images\icons\retro_folders.png" />
                             <p class="folder-desc">Resume</p>
-                        </span> 
+                        </span>
                     </a>
                     <a class="folderlinks" href="CodingProjects.html">
-                        <span class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)">
                             <img class="folder_icons" src="images\icons\retro_folders.png" />
                             <p class="folder-desc">Coding Projects</p>
-                        </span> 
+                        </span>
                     </a>
-                    
+
                     <a class="folderlinks" href="https://flumphik.itch.io/">
-                        <span class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)">
                             <img class="folder_icons" src="images\icons\retro_folders.png" />
-                            <p style="margin: 0px 0px; font-size: 100%;margin: 0px 0px; font-size: 100%; width:max-content">Game Development</p>
+                            <p
+                                style="margin: 0px 0px; font-size: 100%;margin: 0px 0px; font-size: 100%; width:max-content">
+                                Game Development</p>
                         </span>
                     </a>
                     <a class="folderlinks" href="ui-ux-2.html">
-                        <span class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)">
                             <img class="folder_icons" src="images\icons\retro_folders.png" />
                             <p class="folder-desc">UI/UX Portfolio</p>
                         </span>
                     </a>
                     <a class="folderlinks" href="art-2.html">
-                        <span class="folder_div" id="inactivetab"onmouseover="highlightInactiveFolder(this)" onmouseout="unhighlightInactiveFolder(this)">
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)">
                             <img class="folder_icons" src="images\icons\retro_folders.png" />
                             <p class="folder-desc">Art</p>
-                        </span> 
+                        </span>
                     </a>
                     <a class="folderlinks" href="graphic-design.html">
                         <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
@@ -293,160 +341,199 @@
                 </nav>
             </div>
             <div class="rightmargin">
-                <div >
+                <div>
                     <h1 style=" margin: 20px 70px;padding-top: 20px;">
                         Welcome!
                     </h1>
-                    <hr style="margin-left: 70px; background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+                    <hr
+                        style="margin-left: 70px; background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
 
                     <p style=" display: inline-block;padding-bottom: 10px; margin: 10px 70px; ">
-                        My name is Isabella Kenton. I'm a graduate of Cal Poly Pomona where I earned my Bachelor's in Computer Science with a focus in Game Development. I've gained a pasion for UI/UX art and graphic design. I am currently working towards earning my graphic design certification.
+                        My name is Isabella Kenton. I'm a graduate of Cal Poly Pomona where I earned my Bachelor's in
+                        Computer Science with a focus in Game Development. I've gained a pasion for UI/UX art and
+                        graphic design. I am currently working towards earning my graphic design certification.
                     </p>
 
                 </div>
-                             
-                
+
+
                 <h2 style="margin:20px 70px;  ">Tools and Skills</h2>
-                <hr style="margin-left: 70px; background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
-                    
+                <hr
+                    style="margin-left: 70px; background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+
                 <div style="width: 96%; display: inline-block;margin:0px 0px;padding-top:10px; ">
-                    
+
                     <table style="border-collapse: collapse;  background: #ffb6c1;">
-                        
+
                         <tr>
-                            <div class="grid-container-2"  style="margin:10px 70px; padding-bottom: 0px;">
-                                <div class="grid-item" >
-                                    <img src="images/icons/Amazon_Web_Services_Logo.png" alt="AWS" style="height: 55px;"> 
-                                    <br><p>AWS</p>
+                            <div class="grid-container-2" style="margin:10px 70px; padding-bottom: 0px;">
+                                <div class="grid-item">
+                                    <img src="images/icons/Amazon_Web_Services_Logo.png" alt="AWS"
+                                        style="height: 55px;">
+                                    <br>
+                                    <p>AWS</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/Android_Studio_Logo.png" alt="Android Studio" style="height:55px;">      
-                                    <br><p>Android Studio</p>
+                                    <img src="images/icons/Android_Studio_Logo.png" alt="Android Studio"
+                                        style="height:55px;">
+                                    <br>
+                                    <p>Android Studio</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/aws_amplify_logo.png" alt="AWS Amplify" style="height: 55px;">   
-                                    <br><P>AWS Amplify</P>  
+                                    <img src="images/icons/aws_amplify_logo.png" alt="AWS Amplify"
+                                        style="height: 55px;">
+                                    <br>
+                                    <P>AWS Amplify</P>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/C_Logo.png" alt="C" style="height: 55px;">     
-                                    <br><p>C</p>
+                                    <img src="images/icons/C_Logo.png" alt="C" style="height: 55px;">
+                                    <br>
+                                    <p>C</p>
                                 </div>
                                 <div class="grid-item">
                                     <img src="images/icons/csharp_logo.png" alt="C#" style="height: 55px;">
-                                    <br><p>C#</p>
+                                    <br>
+                                    <p>C#</p>
                                 </div>
                                 <div class="grid-item">
                                     <img src="images/icons/C++_Logo.png" alt="C++" style="height:55px;">
-                                    <br><p>C++</p>
+                                    <br>
+                                    <p>C++</p>
                                 </div>
                                 <div class="grid-item">
                                     <img src="images/icons/CSS3_logo.png" alt="CSS" style="height: 55px;">
-                                    <br><p>CSS</p>
+                                    <br>
+                                    <p>CSS</p>
                                 </div>
                                 <!------------------------------------------------------>
-                                
+
                                 <div class="grid-item">
-                                    <img src="images/icons/eclipse_logo.png" alt="Eclipse" style="height: 55px;">  
-                                    <br><p>Eclipse</p>    
+                                    <img src="images/icons/eclipse_logo.png" alt="Eclipse" style="height: 55px;">
+                                    <br>
+                                    <p>Eclipse</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/figma_logo.png" alt="Figma" style="height: 55px;">     
-                                    <br><p>Figma</p>
+                                    <img src="images/icons/figma_logo.png" alt="Figma" style="height: 55px;">
+                                    <br>
+                                    <p>Figma</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/flutter_logo.png" alt="Flutter" style="height: 55px;"> 
-                                    <br><p>Flutter </p>   
+                                    <img src="images/icons/flutter_logo.png" alt="Flutter" style="height: 55px;">
+                                    <br>
+                                    <p>Flutter </p>
                                 </div>
                                 <div class="grid-item">
                                     <img src="images/icons/git_logo.png" alt="GIT" style="height: 55px;">
-                                    <br><p>GIT</p>
+                                    <br>
+                                    <p>GIT</p>
                                 </div>
                                 <div class="grid-item">
                                     <img src="images/icons/github_PNG47.png" alt="GitHub" style="height:55px;">
-                                    <br><p>GitHub</p>
+                                    <br>
+                                    <p>GitHub</p>
                                 </div>
                                 <div class="grid-item">
                                     <img src="images/icons/Godot_logo.png" alt="Godot" style="height: 55px;">
-                                    <br><p>Godot</p>
-                                </div>
-                                <div class="grid-item" >
-                                    <img src="images/icons/html5_logo.png" alt="HTML5" style="height: 55px;">  
-                                    <br><p>HTML5 </p>   
+                                    <br>
+                                    <p>Godot</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/java_logo.png" alt="Java" style="height: 55px;"> 
-                                    <br><p>Java</p>     
+                                    <img src="images/icons/html5_logo.png" alt="HTML5" style="height: 55px;">
+                                    <br>
+                                    <p>HTML5 </p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/JavaFX_Logo.png" alt="JavaFX" style="height: 55px;">   
-                                    <br><p>JavaFX </p> 
+                                    <img src="images/icons/java_logo.png" alt="Java" style="height: 55px;">
+                                    <br>
+                                    <p>Java</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/Kotlin_logo.png" alt="Kotlin" style="height: 55px;"> 
-                                    <br><p>Kotlin </p>   
+                                    <img src="images/icons/JavaFX_Logo.png" alt="JavaFX" style="height: 55px;">
+                                    <br>
+                                    <p>JavaFX </p>
+                                </div>
+                                <div class="grid-item">
+                                    <img src="images/icons/Kotlin_logo.png" alt="Kotlin" style="height: 55px;">
+                                    <br>
+                                    <p>Kotlin </p>
                                 </div>
                                 <div class="grid-item">
                                     <img src="images/icons/krita_logo.png" alt="GIT" style="height: 55px;">
-                                    <br><p>Krita</p>
+                                    <br>
+                                    <p>Krita</p>
                                 </div>
-                                
+
                                 <div class="grid-item">
                                     <img src="images/icons/Mysql_logo.png" alt="Godot" style="height: 55px;">
-                                    <br><p>MySQL</p>
+                                    <br>
+                                    <p>MySQL</p>
                                 </div>
                                 <!------------------------------------------------------>
-                                <div class="grid-item" >
-                                    <img src="images/icons/python_logo.png" alt="Python" style="height: 55px;"> 
-                                    <br><p>Python</p>     
+                                <div class="grid-item">
+                                    <img src="images/icons/python_logo.png" alt="Python" style="height: 55px;">
+                                    <br>
+                                    <p>Python</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/Ren’Py_Logo.png" alt="Ren'Py" style="height: 55px;"> 
-                                    <br><p>Ren'Py</p>     
+                                    <img src="images/icons/Ren’Py_Logo.png" alt="Ren'Py" style="height: 55px;">
+                                    <br>
+                                    <p>Ren'Py</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/Sql_logo.png" alt="JavaFX" style="height: 55px;">  
-                                    <br><p>SQL</p>   
+                                    <img src="images/icons/Sql_logo.png" alt="JavaFX" style="height: 55px;">
+                                    <br>
+                                    <p>SQL</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/unity_logo.png" alt="Unity" style="height: 55px;">   
-                                    <br><p>Unity</p>
+                                    <img src="images/icons/unity_logo.png" alt="Unity" style="height: 55px;">
+                                    <br>
+                                    <p>Unity</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/visual-studio-code-icon.png" alt="Visual Studio Code" style="height: 55px;">
-                                    <br><p>Visual Studio Code</p>
+                                    <img src="images/icons/visual-studio-code-icon.png" alt="Visual Studio Code"
+                                        style="height: 55px;">
+                                    <br>
+                                    <p>Visual Studio Code</p>
                                 </div>
                                 <div class="grid-item">
-                                    <img src="images/icons/Visual-Studio-logo.png" alt="Medtronic" style="height: 55px;">
-                                    <br><p>Visual Studio</p>
+                                    <img src="images/icons/Visual-Studio-logo.png" alt="Medtronic"
+                                        style="height: 55px;">
+                                    <br>
+                                    <p>Visual Studio</p>
                                 </div>
-                                
+
                             </div>
                         </tr>
                     </table>
                 </div> <!--skills table-->
                 <h2 style="margin:20px 70px; margin-top: 0px; margin-bottom: 0px;  padding-bottom:10px;">
-                Socials</h2>
-                <hr style="margin-left: 70px; background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
-                
+                    Socials</h2>
+                <hr
+                    style="margin-left: 70px; background-color:#ff69b4; border-color: #ff69b400; height:1px; width:86%;">
+
                 <div style="padding-bottom: 30px; margin-left: 70px;">
                     <a style=" text-decoration: none;" href="https://github.com/ikenton">
-                        <img style="height: 45px; padding:20px; padding-left: 0px;" src="images/icons/github_PNG47.png" alt="GitHub Profile">
+                        <img style="height: 45px; padding:20px; padding-left: 0px;" src="images/icons/github_PNG47.png"
+                            alt="GitHub Profile">
                     </a>
                     <a style="text-decoration: none;" href="https://flumphik.itch.io/">
-                        <img style="height: 45px; padding:20px;" src="images/icons/itch_io_logo.png " alt="itch.io profile">
+                        <img style="height: 45px; padding:20px;" src="images/icons/itch_io_logo.png "
+                            alt="itch.io profile">
                     </a>
                     <a style="text-decoration: none;" href="https://www.linkedin.com/in/isabella-kenton/">
-                        <img style="height: 45px;padding:20px;" src="images/icons/linkedin-icon.png" alt="Linkedin Profile">
+                        <img style="height: 45px;padding:20px;" src="images/icons/linkedin-icon.png"
+                            alt="Linkedin Profile">
                     </a>
                     <a style="text-decoration: none;" href="https://www.artstation.com/flumph">
                         <img style="height: 45px;padding:20px;" src="images/icons/ArtStation_icon.png" alt="">
                     </a>
                 </div>
-                
-            
+
+
             </div> <!--right margin-->
-           
-                
+
+
         </div>
     </div>
+
 </html>

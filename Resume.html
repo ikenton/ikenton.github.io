@@ -166,7 +166,6 @@
             .folder_div {
                 display: flex;
                 align-items: center;
-                /*gap: 10px;*/
                 padding: 10px;
                 padding-left: 20px;
                 padding-top: 10px;
@@ -193,6 +192,14 @@
             h3 {
                 font-family: Arial, sans-serif;
                 color: rebeccapurple;
+            }
+
+            hr {
+                margin-left: 70px;
+                background-color: #ff69b4;
+                border-color: #ff69b400;
+                height: 1px;
+                width: 86%;
             }
 
             ul {
@@ -273,66 +280,69 @@
         <div class="content">
             <div class="leftmargin">
                 <!--for mobile view I want the folders to either be at the top OR become a hamburger menu. make the left margin adjustable-->
-                <a class="folderlinks" href="index.html">
-                    <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
-                        onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
-                        <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">About Me</p>
+                <nav>
+                    <a class="folderlinks" href="index.html">
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)"> <!--item-->
+                            <img class="folder_icons" src="images\icons\retro_folders.png" />
+                            <p class="folder-desc">About Me</p>
 
-                    </div>
-                </a>
-                <a class="folderlinks" href="Resume.html">
-                    <div class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)"
-                        onmouseout="unhighlightActiveFolder(this)"> <!--item-->
-                        <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">Resume</p>
-                    </div>
-                </a>
+                        </span>
+                    </a>
+                    <a class="folderlinks" href="Resume.html">
+                        <span class="folder_div" id="currenttab" onmouseover="highlightActiveFolder(this)"
+                            onmouseout="unhighlightActiveFolder(this)"> <!--item-->
+                            <img class="folder_icons" src="images\icons\retro_folders.png" />
+                            <p class="folder-desc">Resume</p>
+                        </span>
+                    </a>
+                    <a class="folderlinks" href="CodingProjects.html">
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)">
+                            <img class="folder_icons" src="images\icons\retro_folders.png" />
+                            <p class="folder-desc">Coding Projects</p>
+                        </span>
+                    </a>
 
-                <a class="folderlinks" href="CodingProjects.html">
-                    <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
-                        onmouseout="unhighlightInactiveFolder(this)">
-                        <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">Coding Projects</p>
-                    </div>
-                </a>
-
-                <a class="folderlinks" href="https://flumphik.itch.io/">
-                    <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
-                        onmouseout="unhighlightInactiveFolder(this)">
-                        <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">Game Development</p>
-                    </div>
-                </a>
-                <a class="folderlinks" href="ui-ux-2.html">
-                    <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
-                        onmouseout="unhighlightInactiveFolder(this)">
-                        <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">UI/UX Portfolio</p>
-                    </div>
-                </a>
-                <a class="folderlinks" href="art-2.html">
-                    <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
-                        onmouseout="unhighlightInactiveFolder(this)">
-                        <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p style="margin: 0px 0px; font-size: 100%;">Art</p>
-                    </div>
-                </a>
-                <a class="folderlinks" href="graphic-design.html">
-                    <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
-                        onmouseout="unhighlightInactiveFolder(this)">
-                        <img class="folder_icons" src="images\icons\retro_folders.png" />
-                        <p class="folder-desc">Graphic Design</p>
-                    </div>
-                </a>
+                    <a class="folderlinks" href="https://flumphik.itch.io/">
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)">
+                            <img class="folder_icons" src="images\icons\retro_folders.png" />
+                            <p
+                                style="margin: 0px 0px; font-size: 100%;margin: 0px 0px; font-size: 100%; width:max-content">
+                                Game Development</p>
+                        </span>
+                    </a>
+                    <a class="folderlinks" href="ui-ux-2.html">
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)">
+                            <img class="folder_icons" src="images\icons\retro_folders.png" />
+                            <p class="folder-desc">UI/UX Portfolio</p>
+                        </span>
+                    </a>
+                    <a class="folderlinks" href="art-2.html">
+                        <span class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)">
+                            <img class="folder_icons" src="images\icons\retro_folders.png" />
+                            <p class="folder-desc">Art</p>
+                        </span>
+                    </a>
+                    <a class="folderlinks" href="graphic-design.html">
+                        <div class="folder_div" id="inactivetab" onmouseover="highlightInactiveFolder(this)"
+                            onmouseout="unhighlightInactiveFolder(this)">
+                            <img class="folder_icons" src="images\icons\retro_folders.png" />
+                            <p class="folder-desc">Graphic Design</p>
+                        </div>
+                    </a>
+                </nav>
             </div>
             <div class="rightmargin">
                 <!--add a download resume button at the top-->
                 <div>
-                    <h1
-                        style="margin:40px 70px; margin-bottom: 15px; border-bottom: 2px solid #ff69b4; padding-bottom:10px;">
+                    <h1 style=" margin: 20px 70px;padding-top: 20px;">
                         Isabella Kenton Resume</h1> <!--Insert dowload icon here-->
-                    <p style="margin:10px 70px; ">An aspiring Graphic
+                    <hr>
+                    <p style=" display: inline-block;padding-bottom: 10px; margin: 10px 70px; ">An aspiring Graphic
                         Designer with a background in game design and digital art. Specializing in character design,
                         background art and UI/UX design. Developed and led projects in game design, showcasing strong
                         problem-solving and leadership skills.</p>
@@ -340,9 +350,9 @@
                     <!--------------------------------------------------------------------------------------------------------------------------->
 
                     <h2
-                        style="margin:20px 70px; margin-top: 40px; margin-bottom: 0px; border-bottom: 2px solid #ff69b4; padding-bottom:10px;">
+                        style="margin:20px 70px;margin-bottom: 0px;">
                         Education</h2>
-
+<hr>
                     <p style=" display: inline-block;margin: 0px 70px; padding-right: 30px;">
                         <b>Cal Poly Pomona | 2020 - 2024</b><br>
                         Bachelor's in Computer Science <br>
@@ -400,8 +410,7 @@
                     <br>
                     <p style="margin:0px 70px;">Historian | June 2021 -
                         May 2022</p>
-                    <ul class="bulletpoints"
-                        style="margin:0px 70px; padding-bottom: 40px; ">
+                    <ul class="bulletpoints" style="margin:0px 70px; padding-bottom: 40px; ">
                         <li class="bulletpoints">Documented over 20 club projects and 60 club events. Kept records of
                             membership information for over 50 members, activities, and attendance. Lead meetings and
                             workshops on pixel art, music and Godot’s game engine. </li>
